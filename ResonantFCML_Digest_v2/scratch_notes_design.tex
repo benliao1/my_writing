@@ -1,0 +1,55 @@
+
+
+
+\newpage
+
+\section*{Design and Component Selection}
+6-level FCML 
+
+$P_{IN}=200W$ (arbitrary).
+
+$f_{SW}=100kHz$ (arbitrary)
+
+$V_{HI} = 200V$ to ensure nominal blocking voltage of 40V on each FET; allows 100\% overshoot on 100V EPC2218 (3.2m$\Omega$). (Can use 0$\Omega$ $R_{GATE}$ to minimize overlap loss interference)
+
+$V_{LO}=40V$ implies $I_{OUT}=5A$.
+
+\vspace{1em}
+Caps:
+
+5750 (2220) C5750C0G2E154J230KN 250V  C0G 0.15uF. 
+
+Energy: four caps in parallel $\frac{1}{2}4CV^2 = \frac{1}{2}(4\times 0.15\mu F)(200V)^2 = 0.012 \; Joules$
+
+Volume: 0.0057 * 0.005 * 0.0045 = 0.12825e-6 $m^2$
+
+Energy Density = 93,567 J/$m^3$
+
+\vspace{2em}
+Inductor: Example Coilcraft MSS1260H
+
+12.3mm x 12.3mm x 6mm = 0.90774e-6 $m^3$
+
+$1\mu H$ at 20A max
+
+Energy = $\frac{1}{2} L I^2 = \frac{1}{2} (1\mu H) (20A)^2$ = 0.0002 Joules
+
+energy Density = 220 J/$m^3$
+
+optimization algorithm currently gives: C0 = 133$\mu$F, and L = 4.47nH.  $\longleftarrow$ Am not happy with this and want to revisit code. Could be correct, but this compounds problem of poor Q-factor and loss (oh boy...) Hmm na, think there's error: this would give t1=2.4$\mu s$ $q_H=11.9\mu$C, or $\Delta V=0.09V$. Seems ridiculuously small ripple???
+
+\vspace{1em}
+Am planning on just running with 2$\times$0.3$\mu$F and 1$\mu$H parts. 
+
+This gives $T_{SW,nom} = 2 \times \pi \sqrt{(0.6\mu F)(1\mu H)} + 3 \times  \pi \sqrt{(0.3\mu F)(1\mu H)} = 10\mu s \quad$ or $\quad f_{SW}= 100\;kHz$
+
+We can double up caps (plenty of pad space) or increase L if we want to lower the resonant freq $f_{nom}$; This will allow us to push Gamma lower without seeing annoying high-freq effects.
+
+This component selection will ensure high Q-factor for clear resonant operation.
+
+$Q = \frac{1}{R}\sqrt{\frac{L}{C}} = \frac{1}{\sim 15m\Omega}\sqrt{\frac{1\mu H}{0.6\mu F}} \quad = \quad \sim 86 $
+
+
+
+
+

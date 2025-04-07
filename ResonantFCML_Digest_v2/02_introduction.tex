@@ -1,0 +1,77 @@
+\vspace{-5pt}
+\section{Introduction}
+\vspace{-0.75em}
+%Note, this is all probably too  long for digest. Will leave outlines though for writing full paper - Rose
+
+%MOTIVATION
+
+
+
+%\begin{itemize}
+ %   \item SC and hybrid SC benefits intro (short)
+ %   \item benefits of FCML in general (short) \cite{Meynard1992}, \cite{Modeer20}
+ %   \item benefits of operating above resonance (cite group multi-resonant work (multi-resonant papers APEC 2020, ECCE Europe 2020, APEC 2021), Zichao and Yutian papers)
+%\end{itemize}
+
+
+The flying capacitor multilevel (FCML) converter has gained popularity due to its high power density and high efficiency for both step-up and step-down conversion over a very wide conversion range \cite{Meynard_PESC1992,Modeer_TPEL2020}.
+The FCML topology is often discussed as an attractive alternative to conventional buck or boost-type topologies due to its ability to regulate, greatly reduced inductance requirements, and decreased switch stress on the active devices---allowing the designer to take advantage of the better figures-of-merit for lower voltage switches \cite{Stauth_CICC2018}.
+% \cite{Azurza2020}
+However, the FCML converter can also be operated in a resonant mode as a fixed-ratio converter similar to other hybrid resonant switched-capacitor (SC) converters \cite{Kesarwani_COMPEL2015,Schaef_TPEL2018}.
+As discussed in \cite{Lei_TPEL2015_GeneralSoftCharging,Pasternak_TPEL2017}, resonant operation of hybrid SC converters eliminates capacitor charge sharing losses, and allows for zero-current/voltage switching (ZCS/ZVS) to decrease switching losses.
+Furthermore, previous work has shown that operating hybrid SC converters above-resonance---at the fast-switching limit (FSL) \cite{Seeman2008}---can reduce the output impedance  \cite{Rentmeister_COMPEL2018} and decrease sensitivity to component variation  \cite{Ye_TPEL2020_CascResc}.
+While operating above-resonance precludes ZCS, conduction and ac losses can be reduced due to the decreased rms currents compared to at-resonance operation.
+For high current applications, this is often a desirable trade-off. 
+
+
+
+
+%Similar to other resonant hybrid switched capacitor converters  
+
+%. The FCML converter can also be operated at resonant to 
+
+%Furthermore, the frequency multiplication effect and lower volt-seconds across the inductor reduces the inductance requirement compared to a conventional buck or boost converter. This allows for lower volume magnetics (reword) . 
+
+
+%\textcolor{red}{has been shown to have high power density and low losses in step-up and down conversion for both high and low voltage application. A major benefit of the FCML converter is the decreased switch stress, allowing for use of lower voltage switches, which have been shown to have higher figures-of-merit. Moreover, due to frequency multiplication at the switch-node and decreased voltage ripple, the inductance requirement is significantly decreased compared to a conventional buck or boost converter, allowing for smaller and more light-weight magnetics.}
+
+%\subsection{Motivation for above resonance operation: }
+
+%ORIGINAL%\textcolor{red}{From APEC 2022, re-write}As demonstrated in ~\cite{Ye_TPEL2020_CascResc}, operating above the resonant frequency pushes the converter farther into the fast-switching limit (FSL), reducing the output impedance slightly and making it less sensitive to component variations. Operating in this manner makes the converter easier to control and allows for the use of Class-II ceramic capacitors, despite their dc-bias and temperature-varying characteristics. In addition, the loss of ZCS has a minimal effect on the efficiency of the converter at mid to heavy load, as operating slightly above resonance also results in a smaller rms current value and lower conduction losses ~\cite{Lei_TPEL2015_GeneralSoftCharging} ~\cite{Ye_TPEL2020_CascResc}.
+
+
+Unlike many other hybrid SC converters, higher order ($N\geq3$) resonant FCML converters require multi-resonant operation, with non-uniform resonant phase durations dependent on the level count, flying capacitance, and inductance.
+Previous work in \cite{Kesarwani_COMPEL2015,Rentmeister_COMPEL2018} proposed timings for a general 2\,:1 resonant converter, as all hybrid SC converters collapse to this equivalent circuit for $N$=\,2; however, this analysis was not extended to higher level converters.
+Furthermore, \cite{Schaef_TPEL2018} explored above-resonance operation of $N$=\,3 and $N$=\,6 FCML converters, but used a valley current control scheme to converge on optimal phase durations through active feedback.
+As such, no closed-form analytical solution to ideal phase timings has been published. 
+
+% This work present analysis on higher level count FCML's, at and above resonance.
+
+% \textcolor{red}{However, as this work presents, the phase timings are not independent of each other, and even above resonance they must satisfy specific relationships owing to the natural resonant frequency of each phase's equivalent circuit.}
+
+This work expands on prior analysis and provides an analytical solution to the optimal phase durations for a generic FCML operating at a fixed $N$\,:1 conversion for both at-resonance and above-resonance operation.
+The analysis presented here also provides a more general framework for analyzing other at- and above-resonance hybrid switched capacitor converters, though the FCML represents a more complex case due to the dependence of the phase durations on the relationship between the converter switching frequency and its natural resonant frequencies.
+Lastly, experimental results for a 5\,:1 FCML converter are presented, validating the proposed analysis and demonstrating FCML performance at- and above-resonance.
+
+
+
+
+
+
+
+%NEW CONTENT
+%\begin{itemize}
+ %   \item FCML specific timing (has unequal peak currents, unique among converters (?))
+%\end{itemize}
+
+%\vspace{-5pt}
+
+%Citation List
+%%   \item ~\cite{Schaef_TPEL2018}: does do CCM for 3-to-1 FCML, uses valley current control to find correct timing. Maybe cite internal citations [22], [23]
+    %\item ~\cite{Rentmeister_COMPEL2018}: calculates timing, but only for 2-to-1 case
+%\end{itemize}
+
+%~\cite{Ye_TPEL2020_CascResc}
+%~\cite{Lei_TPEL2015_GeneralSoftCharging}
+
+

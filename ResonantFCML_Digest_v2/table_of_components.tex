@@ -1,0 +1,27 @@
+
+%%Was originally put within a minipage
+
+  {\renewcommand{\arraystretch}{2.3}
+% \small
+\footnotesize
+% 	\begin{table}[thb]
+		\centering
+% 		\vspace{0.2cm}
+        \captionsetup{type=table} %% tell latex to change to table
+		\caption{Component Details}
+
+		\begin{tabular}{rl}
+            \toprule
+            Component & \makecell[l]{Description \& \\ Part Name} \\
+            \midrule
+            $S_{1\textrm{-}5A}$, $S_{1\textrm{-}5B}$    & \makecell[l]{100\,V, 3.2\,m$\Omega$ GaN-FET \\ EPC2218} \\
+            $C_{1-4}$                                   & \makecell[l]{3 $\times$ 0.3\,$\mu$F, C0G, 250V \\ CKG57NC0G2E304J500JH} \\
+            $L$                                         & \makecell[l]{3.39\,$\mu$H \\ MSS1260-332NLD} \\
+            $R_{GATE}$                                  & \makecell[l]{37.5\,$\Omega$, 0402 \\ CR0402-16W-35R7FT} \\
+            Gate Driver                                 & \makecell[l]{5\,V, 7\,A\,/\,5\,A \\ LMG1020} \\
+            \makecell[r]{Level-Shift \\ and Power} & ADUM5240\\
+            \bottomrule
+        \end{tabular}
+
+}%
+

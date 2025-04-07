@@ -1,0 +1,164 @@
+\usepackage{etex}
+\makeatletter
+\newenvironment{tablehere}
+  {\def\@captype{table}}
+  {}
+
+
+\newenvironment{figurehere}
+  {\def\@captype{figure}}
+  {}
+\makeatother
+
+\newcommand{\CLASSINPUTbaselinestretch}{3}
+\newcommand{\CLASSINPUTinnersidemargin}{1in}
+\newcommand{\CLASSINPUToutersidemargin}{1in}
+\newcommand{\CLASSINPUTtoptextmargin}{1in}
+\newcommand{\CLASSINPUTbottomtextmargin}{1in}
+\renewcommand\floatpagefraction{.95} %these commands determine how figures are placed, and changes how latex forces figures on its own page sometimes. 
+
+\usepackage[utf8]{inputenc} % Encoding for special characters
+
+\usepackage{epsf}
+\usepackage{verbatim}
+\usepackage{morefloats}
+\usepackage[caption=false,font=footnotesize]{subfig}
+% \usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[caption=false,font=footnotesize]{subfig} % enables subfloat without overriding IEEEtrans caption settings
+%\usepackage{flushend}
+\usepackage{amsmath,amsfonts,amssymb,amscd}
+%\usepackage[cmex10]{amsmath}
+\usepackage{graphicx}
+\usepackage{hhline}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{psfrag}
+%\usepackage{subcaption} %\begin{subfigure} commands. DO NOT USE as messes with IEEEtrans caption settings.
+%\usepackage{subfigure}
+%\usepackage[tight,footnotesize]{subfigure}
+%\usepackage{caption} % DO NOT USE as messes with IEEEtrans caption settings.
+\usepackage{epsfig}
+\usepackage{booktabs} %professional-looking tables
+\usepackage{multicol} %used for getting multicolumn without page-break
+\usepackage{setspace}	% line spacing package
+\usepackage{units}
+\usepackage{float}		% improves interface for floating objects
+\usepackage{makecell} 	% for additional formatting within table cells
+\usepackage{lipsum} 	% Example filler text
+\usepackage{threeparttable}     % Eases use of footnotes in table floats
+\usepackage{bm}         % Bold-face
+\usepackage{cancel}     % Cancel
+\usepackage{chngcntr}   % Counter
+\usepackage{cite}		% cite multiple (incompatible with biblatex)
+%\usepackage{biblatex}   % Bibliography
+\usepackage{rotating}   % provides sidewaystable and sidewaysfigure
+% \usepackage[section]{placeins} % Forces floats to be rendered before next section
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+%added by pilawa, preventing figure* to get ahead of regular figures.
+%\usepackage{fixltx2e} % Apparently all fixes are included in LaTeX kernel after 2015 
+
+\usepackage{multirow}		% multi-row tables
+\usepackage{array}		% define column format of a table
+\usepackage{epstopdf}
+%\numberwithin{equation}{section}	%number equation according to section
+%\usepackage{xfrac}		% slanted fraction
+\usepackage{pgfplots}	% plot graph
+\pgfplotsset{compat=1.14}
+\usepackage{tikz,pgfplots} % plot graph
+\usepackage{tikz-timing}	% tikz timing package for control signal plot
+%\usetikzlibrary{external}
+%\tikzexternalize[prefix=images/tikz_images/]
+\usepackage{url}			% url display
+%\usepackage[pdfborder={0 0 0}]{hyperref}	% automatically make clickable hyperlinks in pdf, requires multiple pass
+\usepackage[capitalise]{cleveref}		% include the word 'Fig.' in \cref
+%\doublespacing
+%\onehalfspacing			% One-half line spacing
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+% \usepackage{nicematrix} % Improved matrices, arrays, and tabulars
+% \NiceMatrixOptions{cell-space-limits = 2pt}
+
+
+% vertical lines within bmatrix
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+% % Optional vertical stretching of arrays
+% \makeatletter
+% \renewcommand*\env@matrix[1][\arraystretch]{%
+%   \edef\arraystretch{#1}%
+%   \hskip -\arraycolsep
+%   \let\@ifnextchar\new@ifnextchar
+%   \array{*\c@MaxMatrixCols c}}
+% \makeatother
+
+% Vertically stretch all arrays
+\renewcommand{\arraystretch}{1.2}
+%Vertically stretch all equations
+\addtolength{\jot}{2pt}
+
+
+% Equivalent symbol command
+% \newcommand{\defeq}{\stackrel{\mathrm{def}}{=}}
+% \newcommand{\defeq}{\triangleq}
+\newcommand{\defeq}{:=}
+
+% Matrix formatting symbol command
+% \newcommand{\matr}[1]{{#1}}           % none
+% \newcommand{\matr}[1]{\mathbf{#1}}    % undergraduate algebra version
+% \newcommand{\matr}[1]{#1}             % pure math version
+% \newcommand{\matr}[1]{\bm{#1}}        % ISO complying version
+\newcommand{\matr}[1]{\overline{#1}}
+
+% Vector formatting symbol command
+% \newcommand{\vect}[1]{{#1}}           % none
+% \newcommand{\vect}[1]{\mathbf{#1}}    % undergraduate algebra version
+% \newcommand{\vect}[1]{#1}             % pure math version
+% \newcommand{\vect}[1]{\bm{#1}}        % ISO complying version
+\newcommand{\vect}[1]{\overline{#1}}
+
+
+\newcommand{\diff}[1]{\frac{\mathrm{d}}{\mathrm{d}t}{#1}}
+\newcommand{\ddiff}[1]{\frac{\mathrm{d}^2}{\mathrm{d}t^2}{#1}}
+
+
+\usetikzlibrary{decorations.markings}
+\tikzstyle arrowstyle=[scale=1]
+\tikzstyle directed=[postaction={decorate,decoration={markings,
+		mark=at position 1 with {\arrow[arrowstyle]{stealth}}}}]
+\tikzstyle reverse directed=[postaction={decorate,decoration={markings,
+		mark=at position 1 with {\arrowreversed[arrowstyle]{stealth};}}}]
+
+% Defining foreground (fg) and background (bg) colors
+\definecolor{bgblue}{rgb}{0.41961,0.80784,0.80784}%
+\definecolor{bgred}{rgb}{1,0.61569,0.61569}%
+\definecolor{fgblue}{rgb}{0,0,0.6}%
+\definecolor{fgred}{rgb}{0.6,0,0}%
+	
+\newlength\figureheight 
+\newlength\figurewidth
+\setlength\figurewidth{0.5\textwidth} 
+\setlength\figureheight{0.6\figurewidth} 
+
+
+% use the following to mark changes after review
+% credit: http://www.poeschko.com/2012/01/highlighting-changes-in-latex/
+\usepackage{xcolor}
+\usepackage{changebar}
+\usepackage{ulem} %use this package and \sout to cross out removed text. 
+\normalem  %Note that ulem changes the behavior of emph. In order to avoid it, add \normalem to the preamble after the package insertion.
+
+\newif\ifdiff % first revision
+\newif\ifdiffs % second revision
+\newif\ifdifft % third revision
+%\difftrue % remove this line to apply the changes without highlighting them
+
+
