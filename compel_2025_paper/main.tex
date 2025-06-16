@@ -1,0 +1,350 @@
+\documentclass[conference, twocolumn, letterpaper]{IEEEtran}
+%double-spaced below:
+% \documentclass[conference, draftclsnofoot, onecolumn, 10pt, letterpaper]{IEEEtran}
+%\IEEEoverridecommandlockouts %pilawa, enables the use of \thanks for sponsor acknowledgements while in conference mode
+%\documentclass[journal, letterpaper]{IEEEtran}
+%added by pilawa:
+%added by pilawa, used by multicol to place figures within columns
+\makeatletter
+\newenvironment{tablehere}
+  {\def\@captype{table}}
+  {}
+\newenvironment{figurehere}
+  {\def\@captype{figure}}
+  {}
+\makeatother
+\usepackage[cmex10]{amsmath}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{cuted}
+\usepackage{mathtools}
+\usepackage{booktabs} %professional-looking tables
+\usepackage{setspace}
+\usepackage{epstopdf}
+\usepackage{svg}
+\usepackage{url}
+\usepackage{tabularx}
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+\usepackage{listings}
+\usepackage[center]{caption}
+\usepackage{tikz}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathreplacing}
+
+\makeatletter\let\myfsize\f@size\makeatother  
+
+\lstset{basicstyle=\small\ttfamily,breaklines=true}
+
+\raggedbottom
+
+\setlength{\columnsep}{0.9cm}
+     % IEEE style
+
+\title{\singlespacing \fontsize{24}{29} A Full State Feedback Controller for Dynamic Capacitive Wireless Power Transfer Systems}
+
+\author{
+    \IEEEauthorblockN{Ben Liao, Sophia Lin, Dheeraj Etta, Khurram K. Afridi}
+\IEEEauthorblockA{Department of Electrical and Computer Engineering}
+        Cornell University \\
+        Email: \{bhl47, sl2383, dke27, kka34\}@cornell.edu
+}
+
+\begin{document}
+
+\maketitle
+
+\vspace{-0.85cm}
+\begin{abstract}
+This digest presents a novel full-state feedback (FSF) controller for compensating changing coupling variations in dynamic capacitive wireless power transfer (WPT) systems utilizing an active variable reactance (AVR) rectifier. The AVR rectifier enables continuous compensation, allowing the WPT system to maintain high-efficiency power transfer at a fixed frequency by appropriately distributing power between its two branches. Conventional PID control is suboptimal for the AVR rectifier due to the higher-order system dynamics, nonlinearities, and cross-coupling between control loops. In contrast, the FSF control strategy presents an optimal and robust way to control higher order multi-input multi-output systems like the AVR rectifier. A state-space model is developed for the AVR rectifier, and the FSF controller is designed based on this model. To validate the proposed approach, a 13.56 MHz 25-W capacitive WPT system with an AVR rectifier is built and tested. The controller’s effectiveness is demonstrated through both simulations and experiments on the hardware prototype.
+\end{abstract}
+
+\vspace{0.5cm}
+
+\section{Introduction}
+
+Wireless power transfer (WPT) is becoming increasingly important and has the potential to accelerate the widespread adoption of electric vehicles (EVs), especially amongst vehicles that routinely travel along fixed routes such as buses and warehouse forklifts. Capacitive WPT systems can be lighter, cheaper, and smaller than comparable inductive WPT systems due to the absence of ferrite cores. The ability of capacitive WPT systems to transfer high power at high efficiency has been demonstrated, thus proving the viability of this technology \cite{2023_Maji_WPTCE}.
+
+One main challenge of WPT systems is the extreme sensitivity to the value of the coupling capacitance or mutual inductance between the receiver and the transmitter. To increase the practicality of WPT systems in dynamic applications, it is desirable to design and control them to tolerate coupling variations while maintaining full power transfer at high efficiency. The recently proposed active variable reactance (AVR) rectifier addresses these challenges and efficiently provides variable compensation in high-frequency WPT systems \cite{2019_Sinha_Journal}. However, a robust controller is needed in order to perform this compensation automatically and with a sufficiently high bandwidth to allow for in-motion dynamic EV charging. A conventional PID control-based decoupled-dual-loop strategy has been proposed to compensate for changing coupling capacitance while maintaining the desired power transfer \cite{2019_Sinha_ECCE, 2024_Maji_COMPEL}. However, such approaches are not well-suited to optimally control the AVR rectifier due to the higher-order system dynamics, nonlinearities, and cross-coupling between the two control loops.
+
+This work presents a novel time-domain solution for the control of the AVR rectifier with sufficiently high bandwidth and robustness to operate the system dynamically. First, a model of the AVR rectifier is derived in state space. Then, a state-space control strategy is proposed, and an optimal full state feedback (FSF) linear quadratic regulator (LQR) controller is designed and validated in simulation. Finally, a prototype 13.56-MHz, 25-W capacitive WPT system with an AVR rectifier and a dynamically variable coupling capacitance is built and its operation demonstrated with the proposed control strategy.
+
+\vspace{0.5cm}
+
+\section{Dynamic Capacitive Wireless Power Transfer System with an AVR Rectifier}
+\label{sec:system}
+
+Figure \ref{fig:full_schematic} presents the circuit schematic of the dynamic capacitive WPT system with the AVR rectifier. A DC input bus is connected to a full-bridge inverter. Power then flows through the tank formed by $L_{comp}$ and $C_s$. $C_s$ is the coupling capacitance between the roadway-side and vehicle-side coupling plates; $L_{comp}$ is designed such that the impedance of the series-resonant LC tank is zero when $C_s$ assumes its nominal value of $C_{s,nom}$.
+
+The AVR rectifier has two branches: a top branch containing a boost converter attached to an inductive reactance $+jX$, and a bottom branch containing a buck converter attached to a capacitive reactance $-jX$. By independently varying the amount of power processed in each branch, the AVR rectifier can maintain the desired constant output power ($P_{out})$ while compensating for coupling variations by modulating the impedance seen at the input of the AVR rectifier ($z_r$). Throughout this paper, the following notation is used: $p_{out}$ is the time-varying measured variable, $P_{out}$ is the constant nominal DC value, and $\hat{p}_{out}$ is the time-varying small-signal variable. They are related as $p_{out}(t) \equiv P_{out} + \hat{p}_{out}(t)$. Equations \ref{eqn:pout}-\ref{eqn:zin} give $p_{out}$ and $z_r$ as a function of the large-signal circuit states as labeled in Fig. \ref{fig:full_schematic}:
+
+\begin{figure*}[!h]
+	\vspace{-0.7cm}
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/wpt_with_avr_full_schematic_eps.eps}
+	\caption{Dynamic capacitive wireless power transfer system with active variable reactance rectifier schematic.}
+	\label{fig:full_schematic}
+\end{figure*}
+
+\begin{table*}[ht]
+\centering
+\begin{subequations}
+\begin{tabular}{p{\linewidth}}
+\parbox{18cm}{
+	\begin{align}
+		p_{out} &= p_1 + p_2 = v_1 i_{L1} + v_{out} i_{L2} \label{eqn:pout} \\
+		z_r &= \operatorname{Re}(z_r) + j\cdot\operatorname{Im}(z_r) = r_r + jx_r = \frac{k_{rec}^2 v_1^2 v_2^2 + v_1v_{out}i_{L1}i_{L2}X^2}{k_{rec}(v_1v_2^2i_{L1} + v_{out}v_1^2i_{L2})} + jX\frac{v_1 i_{L1}v_2^2 - v_{out} i_{L2}v_1^2}{v_1 i_{L1}v_2^2 + v_{out} i_{L2}v_1^2} \label{eqn:zin} 
+	\end{align}
+}
+\end{tabular}
+\vspace{-0.5cm}
+\end{subequations}
+\end{table*}
+
+\normalsize
+
+$k_{rec}$ is a gain associated with the half-bridge rectifiers under sinusoidal approximation, and $X$ is the differential reactance $\pm jX$ attached to the two branches. When the coupling capacitance $C_s$ changes by an amount $\Delta C_s$, Eqn. \ref{eqn:zin} is utilized to adjust the operation of the AVR rectifier such that $x_r$ perfectly compensates $\Delta C_s$ while maintaining $r_r = R_r$. This also guarantees $p_{out} = P_{out}$, as well as resistive loading on the inverter.
+
+A frequency-based controller has been proposed in \cite{2024_Maji_COMPEL} which utilizes two control loops: one maintains $p_{out} = P_{out}$, and the other maintains $r_r = R_r$. The two loops run at the same frequency, but use constant decoupling gains to minimize cross-coupling between the loops. However, the controller does not have sufficient performance to operate the system in dynamic charging scenarios. The AVR rectifier is a highly nonlinear, heavily-coupled multi-input multi-output (MIMO) system; FSF controllers are typically able to handle such plants more robustly than conventional frequency-based controllers. The FSF controller designed in this work follows the same control strategy of attempting to hold $p_{out}$ and $r_r$ constant at their nominal values $P_{out}$ and $R_r$.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/avr_ss_model_schematic_eps.eps}
+  	\caption{Schematic of the AVR rectifier's linearized small-signal model.}
+  	\label{fig:small_signal}
+	\vspace{-0.5cm}
+\end{figure}
+
+\vspace{0.5cm}
+
+\section{State Space Modeling of the AVR Rectifier}
+\label{sec:modeling}
+
+In this section, a model for the AVR rectifier is developed in state space using a method similar to that employed in \cite{2010_Mayo_CONIELECOMP}. Sec. \ref{sec:control} uses this model for the design of a robust FSF controller. Figure \ref{fig:small_signal} contains the small-signal linearized model of the AVR rectifier. Of note is the inclusion of the input capacitance on both of the converters; these capacitors are necessary in modeling the dynamics of the converter as the input voltages $v_1$ and $v_2$ vary.
+
+In general, a continuous-time state-space model can be written as $\frac{d}{dt}\vec{x} = A\vec{x} + B\vec{u}$, where $\vec{x}$ is the state vector, $\vec{u}$ is the input vector, $A$ is the system dynamics matrix, and $B$ is the input dynamics matrix. The AVR rectifier state-space model is derived from its small-signal model, so the state vector $\hat{\vec{x}}$ contains the small-signal voltages and currents $\hat{v}_1, \hat{v}_2, \hat{i}_{L1}, \hat{i}_{L2}$, and $\hat{v}_{out}$, as labeled in Fig. \ref{fig:small_signal}. The input vector $\hat{\vec{u}}$ contains the small-signal control handles $\hat{d}_1$ and $\hat{d}_2$, which correspond to the small-signal duty cycles of the boost and the buck converters, respectively.
+
+First-order differential equations for $\frac{d}{dt}\hat{\vec{x}}$ are written using time-domain circuit analysis techniques. These are arranged into a matrix, resulting in a valid five-state un-augmented state space model of the AVR rectifier. However, the controller design requires additional augmented integral states $z_1 \equiv \int_0^t \hat{p}_{out}(\tau) d\tau$ and $z_2 \equiv \int_0^t \hat{r}_r(\tau) d\tau$ which track the integral of the error in output power $p_{out}(t)$ and error in the real part of the input impedance $r_r(t)$, respectively. 
+
+To incorporate $z_1$ and $z_2$ into the state-space model, the quantities $\frac{d}{dt}z_1 = \hat{p}_{out}$ and $\frac{d}{dt}z_2 = \hat{r}_r$ must be written as linear combinations of the elements of $\hat{\vec{x}}$. This can be done by taking partial derivatives of Eqns. \ref{eqn:pout}-\ref{eqn:zin}, with results shown in Table \ref{tab:partial_derivs}. Thus, an augmented state vector $\vec{x}_{aug} = \begin{bsmallmatrix} \vec{x} & z_1 & z_2 \end{bsmallmatrix}^T$ can be constructed, and the complete state-space model is presented in Eqn. \ref{eqn:aug_ss_model}. This model is the first significant contribution of this paper.
+
+\begin{table*}[t]
+\centering
+\begin{tabular}{p{\linewidth}}
+\parbox{18cm}{
+	\begin{align} \label{eqn:aug_ss_model}
+		\frac{d}{dt}
+		\begin{bmatrix}
+			\hat{v}_{out} \\
+			\hat{v}_1 \\
+			\hat{v}_2 \\
+			\hat{i}_{L1} \\
+			\hat{i}_{L2} \\
+			z_1 \\
+			z_2
+		\end{bmatrix}
+		=
+		\begin{bmatrix}
+			-\frac{1}{RC_{out}} & 0 & 0 & \frac{D_1'}{C_{out}} & \frac{1}{C_{out}} & 0 & 0 \\
+			0 & 0 & 0 & -\frac{1}{C_1} & 0 & 0 & 0 \\
+			0 & 0 & 0 & 0 & -\frac{D_2}{C_2} & 0 & 0\\
+			-\frac{D_1'}{L_1} & \frac{1}{L_1} & 0 & 0 & 0 & 0 & 0 \\
+			-\frac{1}{L_2} & 0 & \frac{D_2}{L_2} & 0 & 0 & 0 & 0 \\
+			-\frac{\partial p_{out}}{\partial v_{out}} & -\frac{\partial p_{out}}{\partial v_{1}} & -\frac{\partial p_{out}}{\partial v_{2}} & -\frac{\partial p_{out}}{\partial i_{L1}} & -\frac{\partial p_{out}}{\partial i_{L2}} & 0 & 0 \\
+			-\frac{\partial r_r}{\partial v_{out}} & -\frac{\partial r_r}{\partial v_{1}} & -\frac{\partial r_r}{\partial v_{2}} & -\frac{\partial r_r}{\partial i_{L1}} & -\frac{\partial r_r}{\partial i_{L2}} & 0 & 0
+		\end{bmatrix}
+		\begin{bmatrix}
+			\hat{v}_{out} \\
+			\hat{v}_1 \\
+			\hat{v}_2 \\
+			\hat{i}_{L1} \\
+			\hat{i}_{L2} \\
+			z_1 \\
+			z_2
+		\end{bmatrix}
+		+
+		\begin{bmatrix}
+			-\frac{I_{L1}}{C_{out}} & 0 \\
+			0 & 0 \\
+			0 & -\frac{I_{L2}}{C_2} \\
+			\frac{V_{out}}{L_1} & 0 \\
+			0 & \frac{V_2}{L_2} \\
+			0 & 0 \\
+			0 & 0
+		\end{bmatrix}
+		\begin{bmatrix}
+			\hat{d}_1 \\
+			\hat{d}_2
+		\end{bmatrix}
+	\end{align}
+}
+\end{tabular}
+\end{table*}
+
+\renewcommand{\arraystretch}{2}
+\begin{table*}[t]
+\vspace{-0.1cm}
+\centering
+\caption{Table of partial derivatives for Eqns. \ref{eqn:pout}-\ref{eqn:zin}. $n$ and $d$ are the numerator and denominator of the expression for $r_r$ in Eqn. \ref{eqn:zin}, respectively. They are evaluated at the nominal DC value of the system.}
+\label{tab:partial_derivs}
+\begin{tabular}{c|c}
+\midrule
+$\frac{\partial p_{out}}{\partial v_{out}} = I_{L2}$ & $\frac{\partial r_r}{\partial v_{out}} = d^{-2} \Bigl(d(V_1 I_{L1}I_{L2}X^2) - nk_{rec}(V_1^2 I_{L2})\Bigr)$ \\ 
+$\frac{\partial p_{out}}{\partial v_{1}} = I_{L1}$ & $\frac{\partial r_r}{\partial v_{1}} = d^{-2} \Bigl(d(2k_{rec}^2V_2^2V_1 + V_{out}I_{L1}I_{L2}X^2) - nk_{rec}(V_2^2I_{L1}+2V_{out}V_1 I_{L2})\Bigr)$ \\ 
+$\frac{\partial p_{out}}{\partial v_{2}} = 0$ & $\frac{\partial r_r}{\partial v_{2}} = d^{-2} \Bigl(d(2k_{rec}^2V_1^2V_2) - nk_{rec}(2V_1V_2I_{L1})\Bigr)$ \\
+$\frac{\partial p_{out}}{\partial i_{L1}} = V_1$ & $\frac{\partial r_r}{\partial i_{L1}} = d^{-2} \Bigl(d(V_1V_{out}I_{L2}X^2) - nk_{rec}(V_1V_2^2)\Bigr)$ \\
+$\frac{\partial p_{out}}{\partial i_{L2}} = V_{out}$ & $\frac{\partial r_r}{\partial i_{L2}} = d^{-2} \Bigl(d(V_1V_{out}I_{L1}X^2) - nk_{rec}(V_{out}V_1^2)\Bigr)$ \\
+\midrule
+\end{tabular}
+\end{table*}
+
+\begin{figure}[!hb]
+	\centering
+  	\includegraphics[width=0.95\linewidth]{figures/block_diagram_eps.eps}
+  	\caption{Simplified block diagram of the state-space control loop. $p_{out}(\vec{x})$ is given by Eqn. \ref{eqn:pout}; $r_r(\vec{x})$ is given by Eqn. \ref{eqn:zin}, $\vec{D}$ is the vector of nominal duty ratios for the buck and boost converters.}
+  	\label{fig:block_diagram}
+	\vspace{-0.5cm}
+\end{figure}
+
+\vspace{0.5cm}
+
+\begin{figure*}[!t]
+	\vspace{-0.2cm}
+	\centering
+	\includegraphics[width=\textwidth]{figures/pout_zin_with_disturbance_eps.eps}
+	\caption{$p_{out}$ and $r_r$ vs. time, showing the AVR rectifier's startup transient under the proposed controller for $t \in [0, 0.01)$, followed by a step change in coupling reactance $\Delta X_s$ at time $t = 0.01$.}
+	\label{fig:step_response}
+\end{figure*}
+
+\begin{figure*}[!t]
+	\centering
+	\includegraphics[width=\textwidth]{figures/input_waveforms_with_without_control_eps.eps}
+	\caption{Inverter output voltage $v_{inv}$ and inverter output current $i_{inv}$ with a change in coupling reactance $\Delta X_s = 26 \Omega$, with and without the controller.}
+	\label{fig:input_waveforms}
+\end{figure*}
+
+\vspace{-1cm}
+
+\section{Full State Feedback Controller Design and Simulation Validation}
+\label{sec:control}
+
+Figure \ref{fig:block_diagram} shows the complete block diagram of the system under closed-loop control. The controller design consists of finding a gain matrix $K$ such that setting the input as $\vec{u} = \vec{D} - K\vec{x}_{aug}$ results in the closed-loop system driving $p_{out}$ and $r_r$ to their nominal values $P_{out}$ and $R_r$ regardless of the value of $C_s$. To find an optimal $K$, heuristic techniques presented in \cite{2007_Williams} are used to design a linear quadratic regulator (LQR) with reasonable values for the diagonal elements of the $Q$ and $R$ cost-defining matrices. Then, the \texttt{lqr()} function in MATLAB is utilized to solve the corresponding Algebraic Riccati Equation for the optimal gain matrix $K$.
+
+$Q$ is diagonal, with the elements along the diagonal quantifying the cost assigned to each element of the augmented state vector $\vec{x}_{aug}$. $R$ is also diagonal, with the elements along the diagonal quantifying the cost assigned to each element of the input vector $\vec{u}$. Since the controller is only required to drive the two augmented states $z_1$ and $z_2$ to zero and should not respond to DC deviations in any of the elements of $\vec{x}$, only the weights corresponding to $z_1$ and $z_2$ should be nonzero in $Q$. Both diagonal elements of $R$ should be nonzero. The structure of these matrices is shown below:
+
+\vspace{-0.6cm}
+\renewcommand{\arraystretch}{1.25}
+\begin{table}[ht]
+\centering
+\begin{tabular}{p{4.7cm}p{3cm}}
+\begin{equation*}
+Q = 
+	\begin{bmatrix}
+		0_{5x5} & 0_{5x2} \\
+		0_{2x5} & \begin{bmatrix} q_{z1} & 0 \\ 0 & q_{z2} \end{bmatrix} \\
+	\end{bmatrix}
+\end{equation*}
+&
+\vspace{-0.1cm}
+\begin{equation*}
+R = 
+	\begin{bmatrix}
+		r_{d1} & 0 \\
+		0 & r_{d2}
+	\end{bmatrix}
+\end{equation*}
+\end{tabular}
+\end{table}
+
+\vspace{-0.5cm}
+
+Tuning the controller consists of finding a set of strictly positive values for $q_{z1}$, $q_{z2}$, $r_{d1}$ and $r_{d2}$ which results in the desired performance. Bryson's Rule for tuning $Q$ and $R$ is used as a starting point for the tuning process.
+
+A model is built in Simulink and PLECS to validate the proposed controller. Figure \ref{fig:step_response} shows the control objectives $p_{out}$ and $r_r$ being controlled to their target values of $P_{out} = 200 \texttt{ }W$ and $R_r = 50 \texttt{ }\Omega$, respectively, while the coupling reactance is disturbed by an amount $\Delta X_s \equiv \frac{1}{2 \pi f_s}(\frac{1}{C_{s,nom}} - \frac{1}{C_s})$, where $f_s$ is the switching frequency, and $C_{s,nom}$ is the nominal coupling capacitance. The impedance seen by the inverter must be near-resistive for the converter to operate at peak efficiency. Figure \ref{fig:input_waveforms} shows the inverter output voltage ($v_{inv}$) and inverter output current ($i_{inv}$) waveforms under a misalignment condition with and without the controller. The proposed controller is enabling the AVR rectifier to compensate for a change in coupling reactance, as shown by the inverter output voltage and current waveforms being nearly in-phase. The design of the FSF controller for the AVR rectifier and simulation results showing its effectiveness are the second significant contribution of this work.
+
+\begin{table}[h]
+\centering
+\caption{Table listing system component values.}
+\label{tab:sys_params}
+\begin{tabular}{c|c|c|c|c}
+\midrule
+\textbf{Component} & \textbf{Value} & & \textbf{Component} & \textbf{Value} \\
+\midrule
+$C_s$ & 50 pF & & $R$ & 39 $\Omega$ \\
+$L_{comp}$ & 5 $\mu$H & & $C_1$, $C_2$, $C_{out}$ & 4 $\mu$F \\
+$L_1$, $L_2$ & 100 $\mu$H & & $P_{out}$ & 24 W  \\
+$X$ & 35.5 $\Omega$ & & $V_{in}$ & 60 V \\
+$C_X$ ($-jX$) & 457 pF & & $L_X$ ($+jX$) & 0.58 $\mu$H\\
+\midrule
+\end{tabular}
+\end{table}
+
+\vspace{-0.5cm}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=\linewidth]{figures/prototype_annotated_eps.eps}
+	\caption{Annotated photograph of the hardware prototype. A load resistor $R$ is used in place of a battery.}
+	\label{fig:hardware_prototype}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth]{figures/avr_voltage_transient_annotated_eps.eps}
+	\caption{Experimental transient showing $v_1$, $v_2$, and $v_{out}$ trajectories when the controller is activated at time $t = 0$.}
+	\label{fig:voltage_transient}
+\end{figure}
+
+\section{Hardware and Experimental Results}
+\label{sec:hardware}
+
+The proposed controller is implemented on a prototype 13.56 MHz, 100-W capacitive WPT system equipped with an AVR rectifier and an adjustable coupling capacitance. Figure \ref{fig:hardware_prototype} shows the hardware prototype and experimental setup with annotations labeling important components, whose values are listed in Table \ref{tab:sys_params}. The system is tuned to operate in the nominal condition, with the inductor $L_{comp}$ compensating for the coupling capacitance $C_s$ at the desired operating frequency. Then, the system is put in a misaligned condition, where degraded performance is observed. Finally, the controller is activated, which brings the system back to full operating power with resistive loading on the inverter.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.93\linewidth]{figures/avr_inverter_annotated_compare_eps.eps}
+	\caption{Experimental waveforms showing inverter output voltage and current ($v_{inv}$, $i_{inv}$) in a misaligned condition before the controller is activated (top) and after (bottom).}
+	\label{fig:inverter}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.93\linewidth]{figures/avr_pwms_annotated_compare_eps.eps}
+	\caption{Experimental waveforms showing boost ($d_1$) and buck ($d_2$) converter gating signals in a misaligned condition before the controller is activated (top) and after (bottom).}
+	\label{fig:pwms}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.93\linewidth]{figures/avr_branch_currents_compare_eps.eps}
+	\caption{Experimental waveforms showing AVR branch currents in a misaligned condition before the controller is activated (top) and after (bottom).}
+	\label{fig:branch_currents}
+\end{figure}
+
+Figure \ref{fig:pwms} shows the duty cycles to the two converters changing as a result of the control action.
+
+Figure \ref{fig:branch_currents} shows the effect of the control action on the AVR branch currents. Note that the sum of the currents through the two branches has increased as a result of the control action, showing that the full nominal output power has been restored. The current ripple changes because the duty cycles of the two converters change with control action. 
+
+Figure \ref{fig:inverter} shows the effect of the control action on the inverter output voltage and current. Note that there is a small but noticeable phase difference between the voltage and current before the controller is activated, which may cause the inverter to lose soft switching at higher power. After the control action is taken, the voltage and current are perfectly in phase. Also note that the magnitude of the inverter output current decreases; this shows that the control action is reducing the circulating currents in the resonant tank by ensuring the AVR rectifier and tank present a resistive load to the inverter. 
+
+Figure \ref{fig:voltage_transient} shows the transient behavior of the converter when the controller is activated. Note that the three voltages settle to new values after the control action is taken, and that the settling time is around 1 millisecond --- more than enough bandwidth to track a vehicle moving over a capacitive WPT charging pad. The controller implementation and experimental results showing controller effectiveness comprise the third significant contribution of this work.
+
+\section{Conclusion and Future Work}
+\label{sec:conclusion}
+
+This digest presents a novel state-space model and full state feedback (FSF) controller for capacitive WPT systems equipped with AVR rectifiers. The proposed controller allows the system to transfer power efficiently as the coupling capacitance between the transmitter and receiver is varied. A 13.56-MHz, 100-W capacitive WPT system with an AVR rectifier and a dynamically adjustable coupling capacitance was assembled. The proposed controller was validated in simulation and on the hardware prototype.
+
+\section{Acknowledgements}
+\label{sec:ack}
+
+The author would like to acknowledge fellow High Frequency Power Electronics Group members Xuancen Wu and Abdullah Saboor for their ideas and assistance, as well as Prof. Douglas MacMartin of the Department of Mechanical and Aerospace Engineering at Cornell University for his insights and suggestions.
+
+\footnotesize
+\begin{spacing}{1.0}
+\bibliographystyle{ieeetr}
+\bibliography{refs}
+\end{spacing}
+
+\end{document}

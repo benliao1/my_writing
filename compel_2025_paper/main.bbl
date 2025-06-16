@@ -1,0 +1,38 @@
+\begin{thebibliography}{1}
+
+\bibitem{2023_Maji_WPTCE}
+S.~Maji, D.~Etta, and K.~K. Afridi, ``A high-power large air-gap multi-mhz
+  dc-dc capacitive wireless power transfer system for electric vehicle
+  charging,'' in {\em 2023 IEEE Wireless Power Technology Conference and Expo
+  (WPTCE)}, pp.~1--6, 2023.
+
+\bibitem{2019_Sinha_Journal}
+S.~Sinha, A.~Kumar, B.~Regensburger, and K.~K. Afridi, ``Active variable
+  reactance rectifier—a new approach to compensating for coupling variations
+  in wireless power transfer systems,'' {\em IEEE Journal of Emerging and
+  Selected Topics in Power Electronics}, vol.~8, no.~3, pp.~2022--2040, 2020.
+
+\bibitem{2019_Sinha_ECCE}
+S.~Sinha and K.~K. Afridi, ``Closed-loop control of a dynamic capacitive
+  wireless power transfer system,'' in {\em 2019 20th Workshop on Control and
+  Modeling for Power Electronics (COMPEL)}, pp.~1--6, 2019.
+
+\bibitem{2024_Maji_COMPEL}
+S.~Maji, Y.~Cao, D.~Etta, and K.~K. Afridi, ``An intelligent control
+  methodology for in-motion dynamic capacitive wireless power transfer
+  systems,'' in {\em 2024 IEEE Workshop on Control and Modeling for Power
+  Electronics (COMPEL)}, pp.~1--7, 2024.
+
+\bibitem{2010_Mayo_CONIELECOMP}
+J.~C. Mayo-Maldonado, J.~C. Rosas-Caro, R.~Salas-Cabrera,
+  A.~González-Rodriguez, O.~F. Ruíz-Martínez, R.~Castillo-Gutiérrez, J.~R.
+  Castillo-Ibarra, and H.~Cisneros-Villegas, ``State space modeling and control
+  of the dc-dc multilevel boost converter,'' in {\em 2010 20th International
+  Conference on Electronics Communications and Computers (CONIELECOMP)},
+  pp.~232--236, 2010.
+
+\bibitem{2007_Williams}
+R.~Williams and D.~Lawrence, {\em Linear State-Space Control Systems}.
+\newblock Wiley, 2007.
+
+\end{thebibliography}
