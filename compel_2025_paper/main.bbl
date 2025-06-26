@@ -1,10 +1,53 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{2015_Miller_Journal}
+J.~M. Miller, P.~Jones, J.-M. Li, and O.~C. Onar, ``Ornl experience and
+  challenges facing dynamic wireless power charging of ev's,'' {\em IEEE
+  Circuits and Systems Magazine}, vol.~15, no.~2, pp.~40--53, 2015.
+
+\bibitem{2018_Regensburger_COMPEL}
+B.~Regensburger, A.~Kumar, S.~Sinha, and K.~Afridi, ``High-performance
+  13.56-mhz large air-gap capacitive wireless power transfer system for
+  electric vehicle charging,'' in {\em 2018 IEEE 19th Workshop on Control and
+  Modeling for Power Electronics (COMPEL)}, pp.~1--4, 2018.
+
+\bibitem{2013_Covic_Journal}
+G.~A. Covic and J.~T. Boys, ``Modern trends in inductive power transfer for
+  transportation applications,'' {\em IEEE Journal of Emerging and Selected
+  Topics in Power Electronics}, vol.~1, no.~1, pp.~28--41, 2013.
 
 \bibitem{2023_Maji_WPTCE}
 S.~Maji, D.~Etta, and K.~K. Afridi, ``A high-power large air-gap multi-mhz
   dc-dc capacitive wireless power transfer system for electric vehicle
   charging,'' in {\em 2023 IEEE Wireless Power Technology Conference and Expo
   (WPTCE)}, pp.~1--6, 2023.
+
+\bibitem{2011_Budhia_Journal}
+M.~Budhia, G.~A. Covic, and J.~T. Boys, ``Design and optimization of circular
+  magnetic structures for lumped inductive power transfer systems,'' {\em IEEE
+  Transactions on Power Electronics}, vol.~26, no.~11, pp.~3096--3108, 2011.
+
+\bibitem{2014_Lim_Journal}
+Y.~Lim, H.~Tang, S.~Lim, and J.~Park, ``An adaptive impedance-matching network
+  based on a novel capacitor matrix for wireless power transfer,'' {\em IEEE
+  Transactions on Power Electronics}, vol.~29, no.~8, pp.~4403--4413, 2014.
+
+\bibitem{2013_Beh_Journal}
+T.~C. Beh, M.~Kato, T.~Imura, S.~Oh, and Y.~Hori, ``Automated impedance
+  matching system for robust wireless power transfer via magnetic resonance
+  coupling,'' {\em IEEE Transactions on Industrial Electronics}, vol.~60,
+  no.~9, pp.~3689--3698, 2013.
+
+\bibitem{2019_Choi_Journal}
+J.~Choi, J.~Xu, R.~Makhoul, and J.~M.~R. Davila, ``Implementing an impedance
+  compression network to compensate for misalignments in a wireless power
+  transfer system,'' {\em IEEE Transactions on Power Electronics}, vol.~34,
+  no.~5, pp.~4173--4184, 2019.
+
+\bibitem{2017_Kamineni_Journal}
+A.~Kamineni, M.~J. Neath, G.~A. Covic, and J.~T. Boys, ``A mistuning-tolerant
+  and controllable power supply for roadway wireless power systems,'' {\em IEEE
+  Transactions on Power Electronics}, vol.~32, no.~9, pp.~6689--6699, 2017.
 
 \bibitem{2019_Sinha_Journal}
 S.~Sinha, A.~Kumar, B.~Regensburger, and K.~K. Afridi, ``Active variable
@@ -30,6 +73,10 @@ J.~C. Mayo-Maldonado, J.~C. Rosas-Caro, R.~Salas-Cabrera,
   of the dc-dc multilevel boost converter,'' in {\em 2010 20th International
   Conference on Electronics Communications and Computers (CONIELECOMP)},
   pp.~232--236, 2010.
+
+\bibitem{2004_Erickson}
+R.~W. Erickson and D.~Maksimovic, {\em Fundamentals of Power Electronics}.
+\newblock Springer, 2004.
 
 \bibitem{2007_Williams}
 R.~Williams and D.~Lawrence, {\em Linear State-Space Control Systems}.

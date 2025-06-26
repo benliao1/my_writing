@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.26)  12 JUN 2025 22:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.26)  26 JUN 2025 09:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -875,17 +875,24 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 79.
 Package epstopdf Info: Source file: <figures/wpt_with_avr_full_schematic_eps.ep
 s>
-(epstopdf)                    date: 2025-06-12 22:45:46
-(epstopdf)                    size: 156003 bytes
+(epstopdf)                    date: 2025-06-26 09:54:16
+(epstopdf)                    size: 155844 bytes
 (epstopdf)             Output file: <figures/wpt_with_avr_full_schematic_eps-ep
 s-converted-to.pdf>
-(epstopdf)                    date: 2025-06-12 22:45:51
+(epstopdf)                    date: 2025-06-26 09:53:12
 (epstopdf)                    size: 51041 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/wpt_with_avr
 _full_schematic_eps-eps-converted-to.pdf figures/wpt_with_avr_full_schematic_ep
 s.eps>
 (epstopdf)             \includegraphics on input line 86.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(miktex-epstopdf --outfile=figures/wpt_with_avr_full_schematic_eps-eps
+-converted-to.pdf figures/wpt_with_avr_full_schematic_eps.eps)...executed safel
+y (allowed).
+
+Package epstopdf Info: Result file: <figures/wpt_with_avr_full_schematic_eps-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2025-06-26 09:54:20
+(epstopdf)                    size: 51002 bytes.
 <figures/wpt_with_avr_full_schematic_eps-eps-converted-to.pdf, id=4, 1395.2125p
 t x 448.67625pt>
 File: figures/wpt_with_avr_full_schematic_eps-eps-converted-to.pdf Graphic file
@@ -1057,27 +1064,27 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-Package epstopdf Info: Source file: <figures/avr_inverter_annotated_compare_eps
-.eps>
-(epstopdf)                    date: 2025-06-12 22:39:33
-(epstopdf)                    size: 4447118 bytes
-(epstopdf)             Output file: <figures/avr_inverter_annotated_compare_eps
--eps-converted-to.pdf>
-(epstopdf)                    date: 2025-06-12 22:40:43
-(epstopdf)                    size: 277843 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=figures/avr_inverter
-_annotated_compare_eps-eps-converted-to.pdf figures/avr_inverter_annotated_comp
-are_eps.eps>
+Package epstopdf Info: Source file: <figures/avr_branch_currents_compare_eps.ep
+s>
+(epstopdf)                    date: 2025-06-12 22:39:00
+(epstopdf)                    size: 4441421 bytes
+(epstopdf)             Output file: <figures/avr_branch_currents_compare_eps-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2025-06-12 22:40:49
+(epstopdf)                    size: 239561 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=figures/avr_branch_c
+urrents_compare_eps-eps-converted-to.pdf figures/avr_branch_currents_compare_ep
+s.eps>
 (epstopdf)             \includegraphics on input line 307.
 Package epstopdf Info: Output file is already uptodate.
-<figures/avr_inverter_annotated_compare_eps-eps-converted-to.pdf, id=85, 597.23
-125pt x 717.68124pt>
-File: figures/avr_inverter_annotated_compare_eps-eps-converted-to.pdf Graphic f
-ile (type pdf)
-<use figures/avr_inverter_annotated_compare_eps-eps-converted-to.pdf>
-Package pdftex.def Info: figures/avr_inverter_annotated_compare_eps-eps-convert
-ed-to.pdf  used on input line 307.
-(pdftex.def)             Requested size: 228.0308pt x 274.02486pt.
+<figures/avr_branch_currents_compare_eps-eps-converted-to.pdf, id=85, 596.2275p
+t x 717.68124pt>
+File: figures/avr_branch_currents_compare_eps-eps-converted-to.pdf Graphic file
+ (type pdf)
+<use figures/avr_branch_currents_compare_eps-eps-converted-to.pdf>
+Package pdftex.def Info: figures/avr_branch_currents_compare_eps-eps-converted-
+to.pdf  used on input line 307.
+(pdftex.def)             Requested size: 228.0308pt x 274.4848pt.
 Package epstopdf Info: Source file: <figures/avr_pwms_annotated_compare_eps.eps
 >
 (epstopdf)                    date: 2025-06-12 22:39:38
@@ -1099,27 +1106,27 @@ File: figures/avr_pwms_annotated_compare_eps-eps-converted-to.pdf Graphic file
 Package pdftex.def Info: figures/avr_pwms_annotated_compare_eps-eps-converted-t
 o.pdf  used on input line 314.
 (pdftex.def)             Requested size: 228.0308pt x 274.4848pt.
-Package epstopdf Info: Source file: <figures/avr_branch_currents_compare_eps.ep
-s>
-(epstopdf)                    date: 2025-06-12 22:39:00
-(epstopdf)                    size: 4441421 bytes
-(epstopdf)             Output file: <figures/avr_branch_currents_compare_eps-ep
-s-converted-to.pdf>
-(epstopdf)                    date: 2025-06-12 22:40:49
-(epstopdf)                    size: 239561 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=figures/avr_branch_c
-urrents_compare_eps-eps-converted-to.pdf figures/avr_branch_currents_compare_ep
-s.eps>
+Package epstopdf Info: Source file: <figures/avr_inverter_annotated_compare_eps
+.eps>
+(epstopdf)                    date: 2025-06-12 22:39:33
+(epstopdf)                    size: 4447118 bytes
+(epstopdf)             Output file: <figures/avr_inverter_annotated_compare_eps
+-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-06-12 22:40:43
+(epstopdf)                    size: 277843 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=figures/avr_inverter
+_annotated_compare_eps-eps-converted-to.pdf figures/avr_inverter_annotated_comp
+are_eps.eps>
 (epstopdf)             \includegraphics on input line 321.
 Package epstopdf Info: Output file is already uptodate.
-<figures/avr_branch_currents_compare_eps-eps-converted-to.pdf, id=87, 596.2275p
-t x 717.68124pt>
-File: figures/avr_branch_currents_compare_eps-eps-converted-to.pdf Graphic file
- (type pdf)
-<use figures/avr_branch_currents_compare_eps-eps-converted-to.pdf>
-Package pdftex.def Info: figures/avr_branch_currents_compare_eps-eps-converted-
-to.pdf  used on input line 321.
-(pdftex.def)             Requested size: 228.0308pt x 274.4848pt.
+<figures/avr_inverter_annotated_compare_eps-eps-converted-to.pdf, id=87, 597.23
+125pt x 717.68124pt>
+File: figures/avr_inverter_annotated_compare_eps-eps-converted-to.pdf Graphic f
+ile (type pdf)
+<use figures/avr_inverter_annotated_compare_eps-eps-converted-to.pdf>
+Package pdftex.def Info: figures/avr_inverter_annotated_compare_eps-eps-convert
+ed-to.pdf  used on input line 321.
+(pdftex.def)             Requested size: 228.0308pt x 274.02486pt.
 
 
 [4 <./figures/pout_zin_with_disturbance_eps-eps-converted-to.pdf> <./figures/in
@@ -1130,16 +1137,24 @@ ed_eps-eps-converted-to.pdf>]
 LaTeX Warning: Text page 5 contains only floats.
 
 
-Overfull \vbox (1.30995pt too high) has occurred while \output is active []
+Overfull \vbox (1.7699pt too high) has occurred while \output is active []
 
 
 
 
 
-[5 <./figures/avr_inverter_annotated_compare_eps-eps-converted-to.pdf> <./figur
-es/avr_pwms_annotated_compare_eps-eps-converted-to.pdf> <./figures/avr_branch_c
-urrents_compare_eps-eps-converted-to.pdf>] (main.bbl
-Underfull \hbox (badness 6094) in paragraph at lines 27--33
+[5 <./figures/avr_branch_currents_compare_eps-eps-converted-to.pdf> <./figures/
+avr_pwms_annotated_compare_eps-eps-converted-to.pdf> <./figures/avr_inverter_an
+notated_compare_eps-eps-converted-to.pdf>] (main.bbl
+Underfull \hbox (badness 1616) in paragraph at lines 9--13
+[]\OT1/ptm/m/n/8 B. Re-gens-burger, A. Ku-mar, S. Sinha, and K. Afridi, ``High-
+
+ []
+
+
+
+
+Underfull \hbox (badness 4132) in paragraph at lines 70--76
 []\OT1/ptm/m/n/8 J. C. Mayo-Maldonado, J. C. Rosas-Caro, R. Salas-Cabrera,
  []
 
@@ -1157,24 +1172,20 @@ Before submitting the final camera ready copy, remember to:
 
 
 
-
-
-[6
-
-] (main.aux)
+[6] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 19392 strings out of 473523
- 398046 string characters out of 5714630
- 814537 words of memory out of 5000000
- 42270 multiletter control sequences out of 15000+600000
+ 19401 strings out of 473523
+ 398227 string characters out of 5714630
+ 814570 words of memory out of 5000000
+ 42279 multiletter control sequences out of 15000+600000
  590258 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,27n,93p,1187b,480s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,27n,93p,1289b,480s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/benli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmex10.pfb><C:/Users/benli/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmmi10.pfb><C:/Users/benli/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -1192,7 +1203,7 @@ a.pfb><C:/Users/benli/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi
 8a.pfb><C:/Users/benli/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr
 8a.pfb><C:/Users/benli/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr
 i8a.pfb>
-Output written on main.pdf (6 pages, 2148151 bytes).
+Output written on main.pdf (6 pages, 2150259 bytes).
 PDF statistics:
  185 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

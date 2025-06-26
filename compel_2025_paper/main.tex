@@ -65,9 +65,9 @@ This digest presents a novel full-state feedback (FSF) controller for compensati
 
 \section{Introduction}
 
-Wireless power transfer (WPT) is becoming increasingly important and has the potential to accelerate the widespread adoption of electric vehicles (EVs), especially amongst vehicles that routinely travel along fixed routes such as buses and warehouse forklifts. Capacitive WPT systems can be lighter, cheaper, and smaller than comparable inductive WPT systems due to the absence of ferrite cores. The ability of capacitive WPT systems to transfer high power at high efficiency has been demonstrated, thus proving the viability of this technology \cite{2023_Maji_WPTCE}.
+Wireless power transfer (WPT) is becoming increasingly important and has the potential to accelerate the widespread adoption of electric vehicles (EVs), especially amongst vehicles that routinely travel along fixed routes such as buses and warehouse forklifts \cite{2015_Miller_Journal, 2018_Regensburger_COMPEL}. Capacitive WPT systems can be lighter, cheaper, and smaller than comparable inductive WPT systems due to the absence of ferrite cores \cite{2013_Covic_Journal}. The ability of capacitive WPT systems to transfer high power at high efficiency has been demonstrated, thus proving the viability of this technology \cite{2023_Maji_WPTCE}.
 
-One main challenge of WPT systems is the extreme sensitivity to the value of the coupling capacitance or mutual inductance between the receiver and the transmitter. To increase the practicality of WPT systems in dynamic applications, it is desirable to design and control them to tolerate coupling variations while maintaining full power transfer at high efficiency. The recently proposed active variable reactance (AVR) rectifier addresses these challenges and efficiently provides variable compensation in high-frequency WPT systems \cite{2019_Sinha_Journal}. However, a robust controller is needed in order to perform this compensation automatically and with a sufficiently high bandwidth to allow for in-motion dynamic EV charging. A conventional PID control-based decoupled-dual-loop strategy has been proposed to compensate for changing coupling capacitance while maintaining the desired power transfer \cite{2019_Sinha_ECCE, 2024_Maji_COMPEL}. However, such approaches are not well-suited to optimally control the AVR rectifier due to the higher-order system dynamics, nonlinearities, and cross-coupling between the two control loops.
+One main challenge of WPT systems is the extreme sensitivity to the value of the coupling capacitance or mutual inductance between the receiver and the transmitter \cite{2011_Budhia_Journal}. To increase the practicality of WPT systems in dynamic applications, it is desirable to design and control them to tolerate coupling variations while maintaining full power transfer at high efficiency \cite{2014_Lim_Journal, 2013_Beh_Journal, 2019_Choi_Journal, 2017_Kamineni_Journal}. The recently proposed active variable reactance (AVR) rectifier addresses these challenges and efficiently provides variable compensation in high-frequency WPT systems \cite{2019_Sinha_Journal}. However, a robust controller is needed in order to perform this compensation automatically and with a sufficiently high bandwidth to allow for in-motion dynamic EV charging. A conventional PID control-based decoupled-dual-loop strategy has been proposed to compensate for changing coupling capacitance while maintaining the desired power transfer \cite{2019_Sinha_ECCE, 2024_Maji_COMPEL}. However, such approaches are not well-suited to optimally control the AVR rectifier due to the higher-order system dynamics, nonlinearities, and cross-coupling between the two control loops.
 
 This work presents a novel time-domain solution for the control of the AVR rectifier with sufficiently high bandwidth and robustness to operate the system dynamically. First, a model of the AVR rectifier is derived in state space. Then, a state-space control strategy is proposed, and an optimal full state feedback (FSF) linear quadratic regulator (LQR) controller is designed and validated in simulation. Finally, a prototype 13.56-MHz, 25-W capacitive WPT system with an AVR rectifier and a dynamically variable coupling capacitance is built and its operation demonstrated with the proposed control strategy.
 
@@ -78,7 +78,7 @@ This work presents a novel time-domain solution for the control of the AVR recti
 
 Figure \ref{fig:full_schematic} presents the circuit schematic of the dynamic capacitive WPT system with the AVR rectifier. A DC input bus is connected to a full-bridge inverter. Power then flows through the tank formed by $L_{comp}$ and $C_s$. $C_s$ is the coupling capacitance between the roadway-side and vehicle-side coupling plates; $L_{comp}$ is designed such that the impedance of the series-resonant LC tank is zero when $C_s$ assumes its nominal value of $C_{s,nom}$.
 
-The AVR rectifier has two branches: a top branch containing a boost converter attached to an inductive reactance $+jX$, and a bottom branch containing a buck converter attached to a capacitive reactance $-jX$. By independently varying the amount of power processed in each branch, the AVR rectifier can maintain the desired constant output power ($P_{out})$ while compensating for coupling variations by modulating the impedance seen at the input of the AVR rectifier ($z_r$). Throughout this paper, the following notation is used: $p_{out}$ is the time-varying measured variable, $P_{out}$ is the constant nominal DC value, and $\hat{p}_{out}$ is the time-varying small-signal variable. They are related as $p_{out}(t) \equiv P_{out} + \hat{p}_{out}(t)$. Equations \ref{eqn:pout}-\ref{eqn:zin} give $p_{out}$ and $z_r$ as a function of the large-signal circuit states as labeled in Fig. \ref{fig:full_schematic}:
+The AVR rectifier has two branches: a top branch containing a boost converter attached to an inductive reactance $+jX$, and a bottom branch containing a buck converter attached to a capacitive reactance $-jX$. By independently varying the amount of power processed in each branch, the AVR rectifier can maintain the desired constant output power ($P_{out})$ while compensating for coupling variations by modulating the impedance seen at the input of the AVR rectifier ($z_r$). Throughout this paper, the following notation is used: $p_{out}$ is the time-varying measured variable, $P_{out}$ is the constant nominal DC value, and $\hat{p}_{out}$ is the time-varying small-signal variable. They are related as $p_{out}(t) \equiv P_{out} + \hat{p}_{out}(t)$. Equations \ref{eqn:pout}-\ref{eqn:zin} give $p_{out}$ and $z_r$ as a function of the large-signal circuit states as labeled in Fig. \ref{fig:full_schematic} \cite{2019_Sinha_Journal}:
 
 \begin{figure*}[!h]
 	\vspace{-0.7cm}
@@ -122,7 +122,7 @@ A frequency-based controller has been proposed in \cite{2024_Maji_COMPEL} which 
 \section{State Space Modeling of the AVR Rectifier}
 \label{sec:modeling}
 
-In this section, a model for the AVR rectifier is developed in state space using a method similar to that employed in \cite{2010_Mayo_CONIELECOMP}. Sec. \ref{sec:control} uses this model for the design of a robust FSF controller. Figure \ref{fig:small_signal} contains the small-signal linearized model of the AVR rectifier. Of note is the inclusion of the input capacitance on both of the converters; these capacitors are necessary in modeling the dynamics of the converter as the input voltages $v_1$ and $v_2$ vary.
+In this section, a model for the AVR rectifier is developed in state space using a method similar to that employed in \cite{2010_Mayo_CONIELECOMP, 2004_Erickson}. Sec. \ref{sec:control} uses this model for the design of a robust FSF controller. Figure \ref{fig:small_signal} contains the small-signal linearized model of the AVR rectifier. Of note is the inclusion of the input capacitance on both of the converters; these capacitors are necessary in modeling the dynamics of the converter as the input voltages $v_1$ and $v_2$ vary.
 
 In general, a continuous-time state-space model can be written as $\frac{d}{dt}\vec{x} = A\vec{x} + B\vec{u}$, where $\vec{x}$ is the state vector, $\vec{u}$ is the input vector, $A$ is the system dynamics matrix, and $B$ is the input dynamics matrix. The AVR rectifier state-space model is derived from its small-signal model, so the state vector $\hat{\vec{x}}$ contains the small-signal voltages and currents $\hat{v}_1, \hat{v}_2, \hat{i}_{L1}, \hat{i}_{L2}$, and $\hat{v}_{out}$, as labeled in Fig. \ref{fig:small_signal}. The input vector $\hat{\vec{u}}$ contains the small-signal control handles $\hat{d}_1$ and $\hat{d}_2$, which correspond to the small-signal duty cycles of the boost and the buck converters, respectively.
 
@@ -300,13 +300,13 @@ $C_X$ ($-jX$) & 457 pF & & $L_X$ ($+jX$) & 0.58 $\mu$H\\
 \section{Hardware and Experimental Results}
 \label{sec:hardware}
 
-The proposed controller is implemented on a prototype 13.56 MHz, 100-W capacitive WPT system equipped with an AVR rectifier and an adjustable coupling capacitance. Figure \ref{fig:hardware_prototype} shows the hardware prototype and experimental setup with annotations labeling important components, whose values are listed in Table \ref{tab:sys_params}. The system is tuned to operate in the nominal condition, with the inductor $L_{comp}$ compensating for the coupling capacitance $C_s$ at the desired operating frequency. Then, the system is put in a misaligned condition, where degraded performance is observed. Finally, the controller is activated, which brings the system back to full operating power with resistive loading on the inverter.
+The proposed controller is implemented on a prototype 13.56 MHz, 25-W capacitive WPT system equipped with an AVR rectifier and an adjustable coupling capacitance. Figure \ref{fig:hardware_prototype} shows the hardware prototype and experimental setup with annotations labeling important components, whose values are listed in Table \ref{tab:sys_params}. The system is tuned to operate in the nominal condition, with the inductor $L_{comp}$ compensating for the coupling capacitance $C_s$ at the desired operating frequency. Then, the system is put in a misaligned condition, where degraded performance is observed. Finally, the controller is activated, which brings the system back to full operating power with resistive loading on the inverter.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.93\linewidth]{figures/avr_inverter_annotated_compare_eps.eps}
-	\caption{Experimental waveforms showing inverter output voltage and current ($v_{inv}$, $i_{inv}$) in a misaligned condition before the controller is activated (top) and after (bottom).}
-	\label{fig:inverter}
+	\includegraphics[width=0.93\linewidth]{figures/avr_branch_currents_compare_eps.eps}
+	\caption{Experimental waveforms showing AVR branch currents in a misaligned condition before the controller is activated (top) and after (bottom).}
+	\label{fig:branch_currents}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -316,11 +316,11 @@ The proposed controller is implemented on a prototype 13.56 MHz, 100-W capacitiv
 	\label{fig:pwms}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.93\linewidth]{figures/avr_branch_currents_compare_eps.eps}
-	\caption{Experimental waveforms showing AVR branch currents in a misaligned condition before the controller is activated (top) and after (bottom).}
-	\label{fig:branch_currents}
+	\includegraphics[width=0.93\linewidth]{figures/avr_inverter_annotated_compare_eps.eps}
+	\caption{Experimental waveforms showing inverter output voltage and current ($v_{inv}$, $i_{inv}$) in a misaligned condition before the controller is activated (top) and after (bottom).}
+	\label{fig:inverter}
 \end{figure}
 
 Figure \ref{fig:pwms} shows the duty cycles to the two converters changing as a result of the control action.
@@ -334,7 +334,7 @@ Figure \ref{fig:voltage_transient} shows the transient behavior of the converter
 \section{Conclusion and Future Work}
 \label{sec:conclusion}
 
-This digest presents a novel state-space model and full state feedback (FSF) controller for capacitive WPT systems equipped with AVR rectifiers. The proposed controller allows the system to transfer power efficiently as the coupling capacitance between the transmitter and receiver is varied. A 13.56-MHz, 100-W capacitive WPT system with an AVR rectifier and a dynamically adjustable coupling capacitance was assembled. The proposed controller was validated in simulation and on the hardware prototype.
+This paper presents a novel state-space model and full state feedback (FSF) controller for capacitive WPT systems equipped with AVR rectifiers. The proposed controller allows the system to transfer power efficiently as the coupling capacitance between the transmitter and receiver is varied. A 13.56-MHz, 25-W capacitive WPT system with an AVR rectifier and a dynamically adjustable coupling capacitance was assembled. The proposed controller was validated in simulation and on the hardware prototype.
 
 \section{Acknowledgements}
 \label{sec:ack}
