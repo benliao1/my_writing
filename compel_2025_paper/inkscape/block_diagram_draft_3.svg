@@ -26,15 +26,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="378.30212"
-     inkscape:cy="225.92061"
-     inkscape:window-width="1920"
-     inkscape:window-height="1129"
+     inkscape:zoom="2.0000001"
+     inkscape:cx="419.99999"
+     inkscape:cy="202.74999"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="g21" />
   <defs
      id="defs1">
     <marker
@@ -297,7 +297,7 @@
            id="tspan45"
            style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.705556"
            x="80.419876"
-           y="68.928833">r</tspan></text>
+           y="68.928833">s</tspan></text>
     </g>
     <g
        id="g8"
@@ -707,7 +707,7 @@
                id="tspan45-6"
                style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.705556"
                x="111.94974"
-               y="99.41684">r</tspan></text>
+               y="99.41684">s</tspan></text>
           <text
              xml:space="preserve"
              style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffbe;fill-opacity:1;stroke:#000000;stroke-width:0.600001;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1"
@@ -743,7 +743,7 @@
            id="tspan17-1-5"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5"
            x="114.30051"
-           y="79.161407">(Eqn. 1b)</tspan></text>
+           y="79.161407">(Eqn. 1c)</tspan></text>
     </g>
     <g
        id="g20"
