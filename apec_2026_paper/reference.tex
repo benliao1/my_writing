@@ -1,0 +1,175 @@
+\documentclass{article}
+%double-spaced below:
+% \documentclass[conference, draftclsnofoot, onecolumn, 10pt, letterpaper]{IEEEtran}
+%\IEEEoverridecommandlockouts %pilawa, enables the use of \thanks for sponsor acknowledgements while in conference mode
+%\documentclass[journal, letterpaper]{IEEEtran}
+%added by pilawa:
+%added by pilawa, used by multicol to place figures within columns
+\makeatletter
+\newenvironment{tablehere}
+  {\def\@captype{table}}
+  {}
+\newenvironment{figurehere}
+  {\def\@captype{figure}}
+  {}
+\makeatother
+\usepackage[cmex10]{amsmath}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{booktabs} %professional-looking tables
+\usepackage{setspace}
+\usepackage{epstopdf}
+\usepackage{svg}
+\usepackage{url}
+\usepackage{tabularx}
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+\usepackage{listings}
+\usepackage[center]{caption}
+\usepackage{tikz}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathreplacing}
+
+\makeatletter\let\myfsize\f@size\makeatother  
+
+\lstset{basicstyle=\small\ttfamily,breaklines=true}
+
+\raggedbottom
+
+\title{\singlespacing \fontsize{24}{29} A Modular Multi-Phase High-Power Resistive Load Bank with Zero-Current Switching Functionality}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+State-of-the-art inverters and motors can operate with modulation frequencies above 1 kHz. Commercial AC electronic loads unable to sink current at such high frequencies. Manually connecting and disconnecting an array of high-power resistors is time-consuming and error-prone. In this work, an electronically controlled multi-phase high-power resistive load bank is presented, which allows users to perform automated dynamic load sweeps safely and efficiently. Implementation details regarding reliability, signal integrity, and user friendliness are discussed. A fully functional hardware prototype with 18 resistors capable of handling up to 500 V, 90 A, and three phases was built, and the functionality verified with one resistor at rated voltage and current.
+\end{abstract}
+
+\vspace{0.5cm}
+\section{Introduction}
+
+Modern motors with high specific power eliminate the use of heavy magnetic materials. Such motors operate with kHz drive frequencies \cite{Zhang2019_TIA, Anderson2018_EATS, Yoon2018_EATS, Sayed2021_Journal}, which is difficult to achieve with conventional inverter drive topologies. More advanced power electronics must be used to obtain optimal performance \cite{Pallo2020_APEC, Barth2020_Journal, Modeer2020_TPEL, Horowitz2022_APEC, Horowitz2023_APEC}. Commercial AC loads cannot sink the needed combination of high voltage, power, and frequency. The feedback control of the electronic load may also interfere with the drivetrain controller.
+
+One common approach to test these inverters across different load ranges is to manually connect an array of high-power wirewound resistors in various configurations—a time-consuming and error-prone solution. Manual toggle switches can be added directly in the power path, which significantly reduces the time required to change the load, but this still does not enable zero-current switching or dynamic load steps during operation.
+
+To address these concerns, an actively controlled resistive load bank has been proposed in \cite{Jackson2021_PECI}. An electrical switch is added in series with each resistor in the array such that the load can be easily and safely adjusted. This enables analysis of converter transient responses to dynamic load steps. The proposed load bank also has zero current switching (ZCS) functionality. When this is enabled, the load bank will not trigger the load step until a zero-current crossing is detected. For multi-phase setups, the zero-current crossing is detected independently on each phase. With ZCS functionality, the current drawn by the load bank is continuous. This can reduce unwanted voltage ringing and EMI during load transitions, providing a more consistent and safer testing environment. In this work we propose a simpler hardware implementation of this concept, as well as a software graphical user interface, which greatly simplifies the assembly, testing, and use of system.
+
+Section \ref{sec:system} presents the overall proposed system architecture and the design of its components. Next, Section \ref{sec:hardware} presents a full hardware implementation of the proposed design, along with experimental results. Finally, Section \ref{sec:conclusion} concludes the paper.
+
+\vspace{0.5cm}
+\section{System Architecture and Design}
+\label{sec:system}
+
+The proposed load bank comprises three main components: the switch boards which connect and disconnect the load resistors, the motherboard which sends the enable signals to the switch boards, and the browser-based GUI for human interaction. Fig. \ref{fig:all_block_diagrams} illustrates the overall system architecture and the connections between the various components.
+
+\vspace{0.2cm}
+\subsection{Switch Board}
+\label{subsec:switch_board}
+
+The right-side inset of Fig. \ref{fig:all_block_diagrams} presents a block diagram of the switch board. This printed circuit board (PCB) implements the high-power, high-voltage, four-quadrant electrical switch using two series silicon power MOSFETs. One such PCB is mounted on each load resistor, responsible for connecting and disconnecting it from the converter under test. The switch board receives a digital logic signal from the motherboard, actuating the electrical switch accordingly. These boards are designed with wide traces and large creepage and clearance to handle the high blocking voltage and high conducted current required of the system.
+
+The high voltage, high power inverter systems used with the proposed load bank may produce significant electromagnetic interference (EMI). To maintain signal integrity in these environments and prevent false turn-ons/turn-offs, the signal from the motherboard is transmitted to the switch board as a $12\:V$ differential pair, then passed through a common-mode choke and a low-pass filter on the switch board. A comparator with approximately $1\:V$ of hysteresis generates the corresponding jitter-free single-ended input for the isolated MOSFET gate driver, which opens/closes the four-quadrant switch.
+
+The wirewound load resistors may introduce significant parasitic inductance, generating a large $V_{ds}$ voltage spike across the power MOSFETs during a turn-off transition. Thus, a snubber circuit on the switch board is needed to protect the MOSFETs \cite{Jackson2021_PECI}.
+
+\begin{table}[!b]
+\vspace{-0.1cm}
+\centering
+\caption{Hardware specifications.}
+\label{tab:hardware_specs}
+\begin{tabular}{cc}
+\midrule
+\textbf{Parameter}        & \textbf{Value}        \\
+\midrule
+Rated Voltage             & 500 V                 \\
+Rated Current             & 5 A (per resistor)    \\
+Rated Frequency           & 1 kHz (for ZCS)	      \\
+No. of Resistors          & 18                    \\
+Load Resistor Values      & 100 $\Omega$          \\
+Maximum Power Dissipation & 45 kW (all resistors) \\
+No. of Phases             & Up to 3          \\
+\midrule 
+\end{tabular}
+\end{table}
+
+\vspace{0.2cm}
+\subsection{Motherboard}
+\label{subsec:motherboard}
+
+The left-side inset of Fig. \ref{fig:all_block_diagrams} presents a block diagram of the motherboard. This PCB receives serial commands via a USB connection from an external computer, interprets them, and sends logic signals to the connected switch boards. The motherboard also implements the ZCS functionality. Physical toggle switches which override the digital electrical signals to the switch boards allow the user to change the load manually. These are included as a safety measure and convenient low-power testing.
+
+A TI C2000 microcontroller is used to implement the bulk of the functionality described above. The $3.3\:V$, single-ended GPIO microcontroller outputs are first passed through an array of manual override toggle switches, which allow the user to override the microcontroller outputs. From there, they pass through signal inverters and $3.3\:V$ to $12\:V$ level shifters to generate the $12\:V$ differential signal, which is then transmitted to the switch boards.
+
+A USB-B jack allows an external computer to communicate with the motherboard. A USB to UART bridge translates between the USB protocol used by the external computer and the SCI/UART protocol used by the microcontroller.
+
+Hall-effect current sensors can be attached to RJ-45 jacks on the motherboard for implementing the ZCS functionality. These sensors produce a signal which is fed, along with a reference voltage, to the integrated comparators onboard the microcontroller, thereby detecting the zero-current crossing.
+
+\vspace{0.2cm}
+\subsection{Graphical User Interface (GUI)}
+\label{subsec:gui}
+
+The user interacts with the load bank through a browser-based GUI, which allows them to set which resistors are connected or disconnected, toggle the ZCS function on or off, and define which resistors are in each phase.
+
+The GUI makes it possible to use the instrument without downloading any tools or custom software. It is implemented as three programs, all running on a Raspberry Pi, which is connected via USB to the motherboard, and via Ethernet to the user's computer. The three programs are the Serial Interface, the API Server, and the Web Server.
+
+\begin{table*}[t]
+\vspace{-0.1cm}
+\centering
+\caption{Table of key parts in hardware implementation.}
+\label{tab:parts}
+\begin{tabular}{cccc}
+\midrule
+\textbf{Component} & \textbf{Manufacturer}   & \textbf{Part Number}      & \textbf{Parameters}           \\
+\midrule
+Microcontroller    & TI  &        F2800132PT                & 48-pin LQFP                   \\
+USB UART Bridge    & FTDI &       FT230XS                 & 16-pin SSOP                   \\
+Power MOSFET       & Onsemi  &    FCP125N65S3R0         & 650 V, 125 m$\Omega$, 24 A    \\
+Current Sensor     & LEM &        HO150-S                  & 150 A                         \\
+Load Resistor      & TE Connectivity &   TE1500B100RJ & 100 $\Omega$, 1.5 kW          \\
+Gate Driver        & TI &         UCC5350SBD                & 12 V, 8.5 A source, 10 A sink \\
+\midrule
+\end{tabular}
+\end{table*}
+
+\textbf{The Serial Interface} (written in C) acts as a wrapper over the USB communication with the motherboard and implements an intuitive command-line interface (CLI).
+
+\textbf{The API Server} (written in Javascript) acts as a wrapper over the Serial Interface's CLI, using the CLI to implement a REST API for the Web Server to use.
+
+\textbf{The Web Server} (written in Javascript, HTML, CSS) hosts the web content and maps button presses on the web page to API Server calls to perform the specified action.
+
+Fig. \ref{fig:gui} shows a screenshot of the GUI being displayed in a web browser. The left side is used for setting the desired state of the load bank; the right side displays the current state of the load bank.
+
+The REST API can be used by a software script to automate testing with the load bank.
+
+\vspace{0.5cm}
+\section{Hardware Specifications and Experimental Results}
+\label{sec:hardware}
+
+To validate the proposed active load bank, a hardware prototype was designed. Table \ref{tab:hardware_specs} lists the specifications of the implementation.
+
+Fig. \ref{fig:switch_annotated} shows the designed switch board. Fig. \ref{fig:master_annotated} shows the designed motherboard, which is capable of driving eighteen switch boards. Three current sensors are used to implement the full ZCS functionality. The completed assembly is shown in Fig. \ref{fig:full_assembly}, with a closeup of the front panel shown in Fig. \ref{fig:front_panel}. Table \ref{tab:parts} lists key components chosen for this hardware implementation. A photograph of the experimental test setup is shown in Fig. \ref{fig:test_setup}.
+
+In one experiment, we verify that the snubber circuit is functioning correctly by turning off the switch at its rated voltage (and thus the maximum current will be flowing through the resistor). The resulting $V_{ds}$ waveform is shown in Fig. \ref{fig:snubber_osc_snapshot}. No ringing is observed, and the measured $V_{ds}$ never exceeds the $650\:V$ blocking voltage rating of the switch.
+
+In a second experiment, we test ZCS functionality by connecting an AC power supply providing a 1 kHz, $100\:V_{rms}$ waveform to the load bank and performing a load step from $50\:\Omega$ to $16.7\:\Omega$. Fig. \ref{fig:zcs_osc_snapshot} is an oscilloscope snapshot of the resulting transition. The blue signal goes high when the signal to perform the load step is received by the motherboard. The first red line indicates this event. The second red line indicates when the load step actually happened. The presence of a time difference between the two red lines, as well as the lack of a discontinuity on the current waveform, indicates ZCS is working as expected.
+
+% In a third experiment, we further test the ZCS functionality by connecting a three-phase, variable speed drive to the load bank and performing a load step from $50\:\Omega$ to $16.7\:\Omega$. Fig. <add a reference> is an oscilloscope snapshot of the resulting  transition. Again, the blue signal goes high when the signal to perform the load step is received by the motherboard. The load bank performs the load step independently for each of the three phase (at the zero-current crossing). This indicates that ZCS in multi-phase operation is also working as expected.
+
+
+\vspace{0.5cm}
+\section{Conclusion}
+\label{sec:conclusion}
+
+The next generation of electric machines present unique drive challenges due to high frequency and high power requirements. Testing inverters that produce such drive currents is difficult and time-consuming due to the lack of commercial AC electronic loads and the inconvenience of using discrete resistors. This work presents a solution to test state-of-the-art inverters more efficiently and safely. The load bank also opens up new testing possibilities in the form of dynamic load steps and ZCS functionality. A hardware example was designed, built, and verified.
+
+
+%\singlespacing
+%\onecolumn
+
+\vspace{0.5cm}
+\bibliographystyle{ieeetr}
+\bibliography{refs}
+
+\end{document}
