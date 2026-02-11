@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.26)  1 DEC 2025 13:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.26)  29 DEC 2025 22:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -869,35 +869,6 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
 
 
-LaTeX Warning: Citation `2025_Etta_APEC' on page 1 undefined on input line 68.
-
-
-LaTeX Warning: Citation `2019_Sinha_Journal' on page 1 undefined on input line 
-70.
-
-
-LaTeX Warning: Citation `2025_Liao_COMPEL' on page 1 undefined on input line 70
-.
-
-
-LaTeX Warning: Citation `2022_Surakitbovorn_Journal' on page 1 undefined on inp
-ut line 72.
-
-
-LaTeX Warning: Citation `2025_Etta_APEC' on page 1 undefined on input line 72.
-
-
-LaTeX Warning: Citation `2025_Etta_APEC' on page 1 undefined on input line 72.
-
-
-LaTeX Warning: Citation `2019_Sinha_Journal' on page 1 undefined on input line 
-72.
-
-
-LaTeX Warning: Citation `2025_Etta_APEC' on page 1 undefined on input line 72.
-
-
-
 Package epstopdf Info: Source file: <figures/wpt_with_avr_full_schematic_eps.ep
 s>
 (epstopdf)                    date: 2025-08-25 20:13:40
@@ -919,14 +890,22 @@ File: figures/wpt_with_avr_full_schematic_eps-eps-converted-to.pdf Graphic file
 Package pdftex.def Info: figures/wpt_with_avr_full_schematic_eps-eps-converted-
 to.pdf  used on input line 83.
 (pdftex.def)             Requested size: 516.0pt x 142.16132pt.
-
-LaTeX Warning: Reference `fig:original_full_schematic' on page 1 undefined on i
-nput line 90.
-
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 90.
+(Font)              <7> on input line 91.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 90.
+(Font)              <5> on input line 91.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 91--102
+ [][] 
+ []
+
+
+
+[1{C:/Users/benli/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/be
+nli/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
+
+
+]
 Package epstopdf Info: Source file: <figures/scalable_wpt_with_avr_full_schemat
 ic_eps.eps>
 (epstopdf)                    date: 2025-08-25 20:13:33
@@ -938,595 +917,24 @@ ic_eps-eps-converted-to.pdf>
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/scalable_wpt
 _with_avr_full_schematic_eps-eps-converted-to.pdf figures/scalable_wpt_with_avr
 _full_schematic_eps.eps>
-(epstopdf)             \includegraphics on input line 96.
+(epstopdf)             \includegraphics on input line 112.
 Package epstopdf Info: Output file is already uptodate.
-<figures/scalable_wpt_with_avr_full_schematic_eps-eps-converted-to.pdf, id=5, 2
-508.37125pt x 1042.89626pt>
+<figures/scalable_wpt_with_avr_full_schematic_eps-eps-converted-to.pdf, id=16, 
+2508.37125pt x 1042.89626pt>
 File: figures/scalable_wpt_with_avr_full_schematic_eps-eps-converted-to.pdf Gra
 phic file (type pdf)
 <use figures/scalable_wpt_with_avr_full_schematic_eps-eps-converted-to.pdf>
 Package pdftex.def Info: figures/scalable_wpt_with_avr_full_schematic_eps-eps-c
-onverted-to.pdf  used on input line 96.
+onverted-to.pdf  used on input line 112.
 (pdftex.def)             Requested size: 516.0pt x 214.52713pt.
 
-
-[1{C:/Users/benli/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/be
-nli/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
-
-
-]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `eqn:pout' on page 2 undefined on input line 103.
-
-
-LaTeX Warning: Reference `eqn:zsec' on page 2 undefined on input line 103.
-
-
-LaTeX Warning: Reference `fig:original_full_schematic' on page 2 undefined on i
-nput line 103.
-
-
-Overfull \hbox (12.0pt too wide) in paragraph at lines 107--156
+Overfull \hbox (12.0pt too wide) in paragraph at lines 123--172
  [][] 
  []
-
-
-LaTeX Warning: Reference `eqn:pout' on page 2 undefined on input line 162.
-
-
-LaTeX Warning: Reference `eqn:zin' on page 2 undefined on input line 162.
-
-
-LaTeX Warning: Reference `eqn:zin' on page 2 undefined on input line 162.
-
-
-LaTeX Warning: Reference `eqn:pout' on page 2 undefined on input line 162.
-
-
-LaTeX Warning: Reference `eqn:zin' on page 2 undefined on input line 162.
-
-
-LaTeX Warning: Reference `eqn:zin' on page 2 undefined on input line 162.
-
-Runaway argument?
- p_{out} \unskip \relax \UseTaggingSocket {tbl/pcell/end}\@endpbox \do@row@stru
-t \ETC.
-! Forbidden control sequence found while scanning use of \align.
-<inserted text> 
-                \par 
-l.182 		p_{out} &
-                 = p_1 + p_2 = v_1 i_{L1} + v_{out} i_{L2} \label{eqn:pout} \\
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.182 		p_{out} &
-                 = p_1 + p_2 = v_1 i_{L1} + v_{out} i_{L2} \label{eqn:pout} \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.182 		p_{out} &
-                 = p_1 + p_2 = v_1 i_{L1} + v_{out} i_{L2} \label{eqn:pout} \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \endtemplate 
-l.182 		p_{out} &
-                 = p_1 + p_2 = v_1 i_{L1} + v_{out} i_{L2} \label{eqn:pout} \\
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.182 		p_{out} &
-                 = p_1 + p_2 = v_1 i_{L1} + v_{out} i_{L2} \label{eqn:pout} \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.182 		p_{out} &
-                 = p_1 + p_2 = v_1 i_{L1} + v_{out} i_{L2} \label{eqn:pout} \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.182 		p_{out} &
-                 = p_1 + p_2 = v_1 i_{L1} + v_{out} i_{L2} \label{eqn:pout} \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.182 		p_{out} &
-                 = p_1 + p_2 = v_1 i_{L1} + v_{out} i_{L2} \label{eqn:pout} \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.182 		p_{out} &
-                 = p_1 + p_2 = v_1 i_{L1} + v_{out} i_{L2} \label{eqn:pout} \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.182 		p_{out} &= p_
-                     1 + p_2 = v_1 i_{L1} + v_{out} i_{L2} \label{eqn:pout} \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.183 		z
-         _r &= \operatorname{Re}(z_r) + j\cdot\operatorname{Im}(z_r) = r_r +...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.183 		z_
-          r &= \operatorname{Re}(z_r) + j\cdot\operatorname{Im}(z_r) = r_r +...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.183 		z_r &
-             = \operatorname{Re}(z_r) + j\cdot\operatorname{Im}(z_r) = r_r +...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.183 		z_r &
-             = \operatorname{Re}(z_r) + j\cdot\operatorname{Im}(z_r) = r_r +...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.183 		z_r &= \operatorname{Re}
-                                (z_r) + j\cdot\operatorname{Im}(z_r) = r_r +...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.184 		z
-         _s &=  \operatorname{Re}(z_s) + j\cdot\operatorname{Im}(z_s) = r_s ...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.184 		z_
-          s &=  \operatorname{Re}(z_s) + j\cdot\operatorname{Im}(z_s) = r_s ...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.184 		z_s &
-             =  \operatorname{Re}(z_s) + j\cdot\operatorname{Im}(z_s) = r_s ...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.184 		z_s &
-             =  \operatorname{Re}(z_s) + j\cdot\operatorname{Im}(z_s) = r_s ...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.184 		z_s &=  \operatorname{Re}
-                                 (z_s) + j\cdot\operatorname{Im}(z_s) = r_s ...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.185 	\end{align}
-                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (432.10834pt too wide) detected at line 185
-[]
- []
-
-
-! LaTeX Error: \begin{tabular} on input line 179 ended by \end{align}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.185 	\end{align}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.185 	\end{align}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.185 	\end{align}
-                  
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.185 	\end{align}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.185 	\end{align}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.185 	\end{align}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-! LaTeX Error: \begin{table*} on input line 177 ended by \end{subequations}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.186 \end{subequations}
-                        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.186 \end{subequations}
-                        
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (12.0pt too wide) in paragraph at lines 179--186
- [][] 
- []
-
-! Misplaced \crcr.
-\tbl_crcr:n ...l_count_missing_cells:n {#1}}\crcr 
-                                                  
-l.187 \end{tabular}
-                   
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Extra }, or forgotten \endgroup.
-\endarray ...tbl_restore_outer_cell_data: \egroup 
-                                                  \@arrayright \gdef \@pream...
-l.187 \end{tabular}
-                   
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 187.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 187.
-! Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.187 \end{tabular}
-                   
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-! LaTeX Error: \begin{table*} on input line 177 ended by \end{tabular}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.187 \end{tabular}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.187 \end{tabular}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Too many }'s.
-\@endfloatbox ...pagefalse \outer@nobreak \egroup 
-                                                  \color@endbox 
-l.188 \end{table*}
-                  
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-! Extra \endgroup.
-\color@endgroup ->\endgraf \@endpefalse \endgroup 
-                                                  
-l.188 \end{table*}
-                  
-Things are pretty mixed up, but I think the worst is over.
-
-! Too many }'s.
-\color@endbox ->\color@endgroup \egroup 
-                                        
-l.188 \end{table*}
-                  
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-! Undefined control sequence.
-\endtable* ...dfloatbox \global \setbox \@currbox 
-                                                  \float@makebox \textwidth ...
-l.188 \end{table*}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \vbox 
-l.188 \end{table*}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Undefined control sequence.
-\caption@ORI@float@makebox ...boxrestore \@fs@pre 
-                                                  \@fs@iftopcapt \ifvoid \@f...
-l.188 \end{table*}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\caption@ORI@float@makebox ...@pre \@fs@iftopcapt 
-                                                  \ifvoid \@floatcapt \else ...
-l.188 \end{table*}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\caption@ORI@float@makebox ...i \unvbox \@currbox 
-                                                  \else \unvbox \@currbox \i...
-l.188 \end{table*}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Extra \else.
-\caption@ORI@float@makebox ...box \@currbox \else 
-                                                  \unvbox \@currbox \ifvoid ...
-l.188 \end{table*}
-                  
-I'm ignoring this; it doesn't match any \if.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \unvbox 
-l.188 \end{table*}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Undefined control sequence.
-\caption@ORI@float@makebox ...e \unvbox \@currbox 
-                                                  \ifvoid \@floatcapt \else ...
-l.188 \end{table*}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Extra \fi.
-\caption@ORI@float@makebox ...\@floatcapt \fi \fi 
-                                                  \par \@fs@post \vskip \z@ }
-l.188 \end{table*}
-                  
-I'm ignoring this; it doesn't match any \if.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \scan_stop: 
-l.188 \end{table*}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Undefined control sequence.
-\caption@ORI@float@makebox ... \fi \par \@fs@post 
-                                                  \vskip \z@ }
-l.188 \end{table*}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: \begin{document} ended by \end{table*}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.188 \end{table*}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Extra \endgroup.
-\end  ...end#1\endcsname \@checkend {#1}\endgroup 
-                                                  \UseHook {env/#1/after}\if...
-l.188 \end{table*}
-                  
-Things are pretty mixed up, but I think the worst is over.
-
-
-LaTeX Warning: Reference `eqn:pout' on page 2 undefined on input line 191.
-
-
-LaTeX Warning: Reference `eqn:zsec' on page 2 undefined on input line 191.
-
-
-LaTeX Warning: Reference `eqn:zin' on page 2 undefined on input line 191.
-
-
-LaTeX Warning: Citation `2019_Sinha_Journal' on page 2 undefined on input line 
-191.
-
-
-LaTeX Warning: Reference `eqn:zsec' on page 2 undefined on input line 191.
-
-
-LaTeX Warning: Citation `2025_Etta_APEC' on page 2 undefined on input line 196.
-
-
-
-LaTeX Warning: Citation `2019_Sinha_Journal' on page 2 undefined on input line 
-196.
-
-
-LaTeX Warning: Reference `fig:scalable_full_schematic' on page 2 undefined on i
-nput line 198.
-
-
-LaTeX Warning: Citation `2025_Etta_APEC' on page 2 undefined on input line 198.
-
-
-
-LaTeX Warning: Citation `2025_Etta_APEC' on page 2 undefined on input line 198.
-
 
 
 
@@ -1566,82 +974,6 @@ File: figures/block_diagram_eps-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/block_diagram_eps-eps-converted-to.pdf  used o
 n input line 213.
 (pdftex.def)             Requested size: 245.09921pt x 136.94243pt.
-
-LaTeX Warning: Reference `eqn:pout' on page 2 undefined on input line 214.
-
-
-LaTeX Warning: Reference `eqn:zsec' on page 2 undefined on input line 214.
-
-
-LaTeX Warning: Reference `eqn:pout' on page 2 undefined on input line 214.
-
-
-LaTeX Warning: Reference `eqn:zsec' on page 2 undefined on input line 214.
-
-! Improper \prevdepth.
-<recently read> \prevdepth 
-                           
-l.218 \end{figure*}
-                   
-You can refer to \spacefactor only in horizontal mode;
-you can refer to \prevdepth only in vertical mode; and
-neither of these is meaningful inside \write. So
-I'm forgetting what you said and using zero instead.
-
-! You can't use `\prevdepth' in horizontal mode.
-\end@dblfloat ...ma \prevdepth \vbox {}\prevdepth 
-                                                  \@tempdima \penalty \@floa...
-l.218 \end{figure*}
-                   
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \penalty 
-l.218 \end{figure*}
-                   
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \penalty 
-l.218 \end{figure*}
-                   
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.218 \end{figure*}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.220 \begin{figure*}[!b]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 Package epstopdf Info: Source file: <figures/sim_results_eps.eps>
 (epstopdf)                    date: 2025-08-26 00:58:09
 (epstopdf)                    size: 666332 bytes
@@ -1660,68 +992,73 @@ File: figures/sim_results_eps-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/sim_results_eps-eps-converted-to.pdf  used on 
 input line 223.
 (pdftex.def)             Requested size: 516.0pt x 109.15984pt.
-! Missing } inserted.
-<inserted text> 
-                }
-l.226 \end{figure*}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
 
-LaTeX Warning: Citation `2025_Liao_COMPEL' on page 2 undefined on input line 22
-8.
+[2 <./figures/wpt_with_avr_full_schematic_eps-eps-converted-to.pdf>]
+
+Package epstopdf Info: Source file: <figures/hardware_pic_annotated_eps.eps>
+(epstopdf)                    date: 2025-08-25 20:25:39
+(epstopdf)                    size: 473242 bytes
+(epstopdf)             Output file: <figures/hardware_pic_annotated_eps-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2025-08-25 20:25:50
+(epstopdf)                    size: 337742 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=figures/hardware_pic
+_annotated_eps-eps-converted-to.pdf figures/hardware_pic_annotated_eps.eps>
+(epstopdf)             \includegraphics on input line 237.
+Package epstopdf Info: Output file is already uptodate.
+<figures/hardware_pic_annotated_eps-eps-converted-to.pdf, id=39, 545.03625pt x 
+362.35374pt>
+File: figures/hardware_pic_annotated_eps-eps-converted-to.pdf Graphic file (typ
+e pdf)
+<use figures/hardware_pic_annotated_eps-eps-converted-to.pdf>
+Package pdftex.def Info: figures/hardware_pic_annotated_eps-eps-converted-to.pd
+f  used on input line 237.
+(pdftex.def)             Requested size: 232.19843pt x 154.3715pt.
+Package epstopdf Info: Source file: <figures/hardware_waveforms_annotated_eps.e
+ps>
+(epstopdf)                    date: 2025-08-25 00:45:12
+(epstopdf)                    size: 466758 bytes
+(epstopdf)             Output file: <figures/hardware_waveforms_annotated_eps-e
+ps-converted-to.pdf>
+(epstopdf)                    date: 2025-08-25 00:51:20
+(epstopdf)                    size: 510484 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=figures/hardware_wav
+eforms_annotated_eps-eps-converted-to.pdf figures/hardware_waveforms_annotated_
+eps.eps>
+(epstopdf)             \includegraphics on input line 244.
+Package epstopdf Info: Output file is already uptodate.
+<figures/hardware_waveforms_annotated_eps-eps-converted-to.pdf, id=40, 627.3437
+5pt x 666.49pt>
+File: figures/hardware_waveforms_annotated_eps-eps-converted-to.pdf Graphic fil
+e (type pdf)
+<use figures/hardware_waveforms_annotated_eps-eps-converted-to.pdf>
+Package pdftex.def Info: figures/hardware_waveforms_annotated_eps-eps-converted
+-to.pdf  used on input line 244.
+(pdftex.def)             Requested size: 162.53818pt x 172.68329pt.
+
+Overfull \hbox (12.80365pt too wide) in paragraph at lines 235--250
+ []$[]$ 
+ []
 
 
-LaTeX Warning: Citation `2010_Mayo_CONIELECOMP' on page 2 undefined on input li
-ne 228.
+
+[3 <./figures/scalable_wpt_with_avr_full_schematic_eps-eps-converted-to.pdf> <.
+/figures/avr_ss_model_schematic_eps-eps-converted-to.pdf> <./figures/block_diag
+ram_eps-eps-converted-to.pdf>]
+
+(main.bbl
+Underfull \hbox (badness 1616) in paragraph at lines 9--13
+[]\OT1/ptm/m/n/8 B. Re-gens-burger, A. Ku-mar, S. Sinha, and K. Afridi, ``High-
+
+ []
 
 
-LaTeX Warning: Reference `fig:scalable_full_schematic' on page 2 undefined on i
-nput line 228.
+Underfull \hbox (badness 4132) in paragraph at lines 72--78
+[]\OT1/ptm/m/n/8 J. C. Mayo-Maldonado, J. C. Rosas-Caro, R. Salas-Cabrera,
+ []
 
-
-LaTeX Warning: Reference `fig:small_signal' on page 2 undefined on input line 2
-28.
-
-
-LaTeX Warning: Citation `2025_Liao_COMPEL' on page 2 undefined on input line 22
-8.
-
-
-LaTeX Warning: Reference `eqn:zsec' on page 2 undefined on input line 228.
-
-
-LaTeX Warning: Reference `eqn:aug_ss_model' on page 2 undefined on input line 2
-28.
-
-
-LaTeX Warning: Citation `2025_Liao_COMPEL' on page 2 undefined on input line 22
-8.
-
-
-LaTeX Warning: Citation `2007_Williams' on page 2 undefined on input line 228.
-
-
-LaTeX Warning: Reference `fig:block_diagram' on page 2 undefined on input line 
-228.
-
-
-LaTeX Warning: Reference `fig:sim_results' on page 2 undefined on input line 23
-0.
-
-
-LaTeX Warning: Reference `fig:hardware_prototype' on page 2 undefined on input 
-line 255.
-
-
-LaTeX Warning: Reference `fig:hardware_waveforms' on page 2 undefined on input 
-line 255.
-
-No file main.bbl.
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1734,74 +1071,48 @@ Before submitting the final camera ready copy, remember to:
  process uses the appropriate paper size.
 
 
-! LaTeX Error: \begin{figure*} on input line 220 ended by \end{document}.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.270 \end{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+[4] [5 <./figures/sim_results_eps-eps-converted-to.pdf>]
 
-(main.aux)
+
+
+[6
+
+
+ <./figures/hardware_pic_annotated_eps-eps-converted-to.pdf> <./figures/hardwar
+e_waveforms_annotated_eps-eps-converted-to.pdf>] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-! You can't use `\end' in internal vertical mode.
-\enddocument ...cument/end}\deadcycles \z@ \@@end 
-                                                  
-l.270 \end{document}
-                    
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-! LaTeX Error: \begin{figure*} on input line 220 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.270 \end{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.270 \end{document}
-                    
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-)
-! Emergency stop.
-<*> ./main.tex
-              
-*** (job aborted, no legal \end found)
-
- 
+ ) 
 Here is how much of TeX's memory you used:
- 19305 strings out of 473523
- 394759 string characters out of 5714630
- 803034 words of memory out of 5000000
- 42186 multiletter control sequences out of 15000+600000
- 589998 words of font info for 90 fonts, out of 8000000 for 9000
+ 19330 strings out of 473523
+ 396001 string characters out of 5714630
+ 807474 words of memory out of 5000000
+ 42214 multiletter control sequences out of 15000+600000
+ 588204 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,27n,93p,1432b,479s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 94i,27n,93p,1425b,480s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/benli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmex10.pfb><C:/Users/benli/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb><C:/Users/benli/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi5.pfb><C:/Users/benli/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/benli/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/benli/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/benli/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/benli/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/be
+nli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/
+Users/benli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.
+pfb><C:/Users/benli/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.
+pfb><C:/Users/benli/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a
+.pfb><C:/Users/benli/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a
+.pfb><C:/Users/benli/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8
+a.pfb>
+Output written on main.pdf (6 pages, 1902565 bytes).
+PDF statistics:
+ 192 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+
