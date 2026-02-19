@@ -117,10 +117,10 @@ In this work, an AVR-equipped scalable dynamic capacitive WPT system architectur
 }
 \end{tabular}
 
-\vspace{-0.5cm}
+\vspace{-0.8cm}
 \end{table*}
 
-Figure \ref{fig:original_full_schematic} presents the practical circuit schematic of the dynamic capacitive WPT system with the AVR rectifier. A DC input bus is connected to a full-bridge inverter. $C_s$ is the coupling capacitance between the roadway-side and vehicle-side coupling plates. The L-section matching network ($L_{pri}$, $C_{pri}$, $L_{sec}$, $C_{sec}$) surrounding $C_s$ is designed to provide a voltage gain to minimize displacement current through the air gap while compensating the reactance of $C_s$ such that the loading on the inverter is near-resistive, allowing the inverter to achieve soft-switching.
+Figure \ref{fig:original_full_schematic} presents the practical circuit schematic of the dynamic capacitive WPT system with the AVR rectifier. A DC input bus is connected to a full-bridge inverter. $C_s$ is the coupling capacitance between the roadway-side and vehicle-side coupling plates. The L-section matching network ($L_{pri}$, $C_{pri}$, $L_{sec}$, $C_{sec}$) surrounding $C_s$ is designed to provide a voltage gain across $C_s$ to minimize displacement current through the air gap while compensating the reactance of $C_s$ such that the loading on the inverter is near-resistive, allowing the inverter to achieve soft-switching.
 
 The AVR rectifier has two branches: a top branch containing a boost converter attached to an inductive reactance $+jX$ through one half-bridge rectifier, and a bottom branch containing a buck converter attached to a capacitive reactance $-jX$ through another half-bridge rectifier. By independently varying the amount of power processed in each branch, the AVR rectifier can maintain the desired constant output power ($P_{out})$ while compensating for coupling variations by modulating the impedance seen at the input of the AVR rectifier ($z_r$). Throughout this paper, the following notation is used: $p_{out}$ is the time-varying measured variable, $P_{out}$ is the constant nominal DC value, and $\hat{p}_{out}$ is the small-signal variable. They are related as $p_{out}(t) \equiv P_{out} + \hat{p}_{out}(t)$. 
 
@@ -133,7 +133,7 @@ The AVR rectifier has two branches: a top branch containing a boost converter at
 	\vspace{-0.5cm}
 \end{figure*}
 
-Equations \ref{eqn:pout}-\ref{eqn:zsec} give $p_{out}$, $z_r$, and $z_s$ as a function of the large-signal circuit states as labeled in Figure \ref{fig:original_full_schematic}. $k_{rec}$ is a gain associated with the half-bridge rectifiers under sinusoidal approximation, $X$ is the differential reactance $\pm jX$ attached to the two branches, and $\omega_s$ is the inverter switching frequency. When the coupling capacitance $C_s$ changes by an amount $\Delta C_s$, Eqns. \ref{eqn:pout}-\ref{eqn:zsec} are utilized to adjust the operation of the AVR rectifier such that the real part of the impedance looking into the secondary $\operatorname{Re}(Z_s)$ is held constant at its nominal value $r_s = R_s$. This also guarantees $p_{out} = P_{out}$, as well as resistive loading on the inverter. A derivation of Eqn. \ref{eqn:zin} can be found in \cite{2019_Sinha_Journal}; a derivation of Eqn. \ref{eqn:zsec} is provided in Appendix \ref{app:zsec_proof}.
+Equations \ref{eqn:pout}-\ref{eqn:zsec} give $p_{out}$, $z_r$, and $z_s$ as a function of the large-signal circuit states as labeled in Figure \ref{fig:original_full_schematic}. $k_{rec}$ is a gain associated with the half-bridge rectifiers under sinusoidal approximation, $X$ is the differential reactance $\pm jX$ attached to the two branches, and $\omega_s$ is the inverter switching frequency. When the coupling capacitance $C_s$ changes by an amount $\Delta C_s$, Eqns. \ref{eqn:pout}-\ref{eqn:zsec} are utilized to adjust the operation of the AVR rectifier such that the real part of the impedance looking into the secondary $\operatorname{Re}(Z_s)$ is held constant at its nominal value $r_s = R_s$. This guarantees $p_{out} = P_{out}$ and resistive loading on the inverter. A derivation of Eqn. \ref{eqn:zin} can be found in \cite{2019_Sinha_Journal}. Transforming $z_r$ across the secondary-side matching network gives Eqn. \ref{eqn:zsec}.
 
 \section{Scalable Architecture for Dynamic Capacitive WPT}
 \label{sec:scalable}
@@ -148,9 +148,7 @@ This section motivates and presents a novel topology for scaling the capacitive 
 \label{fig:small_signal}
 \end{figure}
 
-Figure \ref{fig:scalable_full_schematic} shows the proposed novel scalable dynamic capacitive WPT topology. On the roadway side, an $N$-level stacked-inverter architecture introduced in \cite{2025_Etta_APEC} combines the power from $N$ high-frequency inverters at the input. On the vehicle side, power is split between the $+jX$ and $-jX$ branches. On each branch, an $M$-level stacked-rectifier structure using a series-in parallel-out transformer splits the power into $M$ high-frequency half-bridge diode rectifiers. The rectified power is then combined in parallel and fed through a single DC-DC converter on each branch. This topology meshes the wide dynamic compensation range of the AVR rectifier with the high-efficiency scalable system proposed in \cite{2025_Etta_APEC}, all with a low component count. Moreover, the design of the matching network and AVR differential impedance $X$ can be co-designed in the same manner as described in \cite{2019_Sinha_Journal} by simply replacing $V_{in}$ and $V_{out}$ with an effective $V_{in,eff} = \kappa N V_{in}$ and $V_{out,eff} = \kappa M V_{out}$, where $\kappa$ is the coupling coefficient of the transformers. 
-
-This architecture thus effectively addresses the lower power-handling capabilities of the high-frequency inverters and rectifiers by paralleling them using transformers. This architecture simultaneously minimizes component count and overall system complexity by performing the power combining at the output in front of the pair of DC-DC converters, which avoids duplicating the paired DC-DC converter structure $M$ times. This is possible because the DC-DC converters are relatively simple and low-frequency buck and boost converters, which can be made to handle the full 12 kW of output power. The novel architecture constitutes the first significant contribution of this paper.
+Figure \ref{fig:scalable_full_schematic} shows the proposed novel scalable dynamic capacitive WPT topology. On the roadway side, an $N$-level stacked-inverter architecture introduced in \cite{2025_Etta_APEC} combines the power from $N$ high-frequency inverters. On the vehicle side, power is split between the $+jX$ and $-jX$ branches. On each branch, an $M$-level stacked-rectifier structure using a series-in parallel-out transformer network splits the power into $M$ high-frequency half-bridge diode rectifiers. The rectified power is then combined in parallel and fed through a single DC-DC converter on each branch. This topology meshes the wide dynamic compensation range of the AVR rectifier with the high-efficiency scalable system proposed in \cite{2025_Etta_APEC}, all with a low component count. Moreover, the design of the matching network and AVR differential impedance $X$ can be co-designed in the same manner as described in \cite{2019_Sinha_Journal} by simply replacing $V_{in}$ and $V_{out}$ with an effective $V_{in,eff} = \kappa N V_{in}$ and $V_{out,eff} = \kappa M V_{out}$, where $\kappa$ is the transformer coupling coefficient. The novel architecture constitutes the first significant contribution of this paper.
 
 \begin{figure*}[!h]
 	\centering
@@ -222,8 +220,6 @@ As in the matching network optimization, the values of $V_{in}$ and $V_{out}$ mu
 
 Next, a full state feedback controller is designed using methods employed in \cite{2025_Liao_COMPEL, 2007_Williams}. Figure \ref{fig:block_diagram} shows the complete block diagram of the system under closed-loop control. The controller design consists of finding a gain matrix $K$ such that setting the input as $\vec{u} = \vec{D} - K\vec{x}_{aug}$ results in the closed-loop system driving $p_{out}$ and $r_s$ to their nominal values $P_{out}$ and $R_s$ regardless of the value of $C_s$. To find an optimal $K$, heuristic techniques presented in \cite{2007_Williams} are used to design a linear quadratic regulator (LQR) with reasonable values for the diagonal elements of the $Q$ and $R$ cost-defining matrices. Then, the \texttt{lqr()} function in MATLAB is utilized to solve the corresponding Algebraic Riccati Equation for the optimal gain matrix $K$. 
 
-A model is built in Simulink and PLECS to validate the proposed topology and controller for a 6.78 MHz, 12-kW system with $V_{in} = V_{out} = 400$ V. Figure \ref{fig:sim_results} shows steady-state inverter output waveforms and AVR branch currents. It also shows the control objectives $p_{out}$ and $r_s$ being controlled to $P_{out} = 12 \text{ kW}$ and $R_s = 43.2 \text{ }\Omega$, while the coupling reactance is disturbed by an amount $\Delta X_s \equiv \frac{1}{2 \pi f_s}(\frac{1}{C_{s,nom}} - \frac{1}{C_s})$, where $f_s$ is the switching frequency, and $C_{s,nom}$ is the nominal coupling capacitance. The state-space model, full state feedback controller, and simulation validation of the proposed architecture comprise the second significant contribution of this digest.
-
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\linewidth]{figures/block_diagram_eps.eps}
@@ -231,19 +227,12 @@ A model is built in Simulink and PLECS to validate the proposed topology and con
 \label{fig:block_diagram}
 \end{figure}
 
-\begin{figure*}
-\centering
-\includegraphics[width=\linewidth]{figures/setup_annotate_eps.eps}
-\caption{Hardware setup annotated.}
-\label{fig:setup}	
-\end{figure*}
+A model is built in Simulink and PLECS to validate the proposed topology and controller for a 6.78 MHz, 12-kW system with $V_{in} = V_{out} = 400$ V. Figure \ref{fig:sim_results} shows steady-state inverter output waveforms and AVR branch currents. It also shows the control objectives $p_{out}$ and $r_s$ being controlled to $P_{out} = 12 \text{ kW}$ and $R_s = 43.2 \text{ }\Omega$, while the coupling reactance is disturbed by an amount $\Delta X_s \equiv \frac{1}{2 \pi f_s}(\frac{1}{C_{s,nom}} - \frac{1}{C_s})$, where $f_s$ is the switching frequency, and $C_{s,nom}$ is the nominal coupling capacitance. The state-space model, full state feedback controller, and simulation validation of the proposed architecture comprise the second significant contribution of this paper.
 
 \section{Hardware Prototype and Experimental Results}
 \label{sec:hardware}
 
-The proposed controller is implemented on a prototype 6.78 MHz, 12-kW AVR-equipped scalable capacitive WPT system. To achieve this power level, three 4-kW-rated full-bridge inverters and three half-bridge rectifiers in each AVR branch ($N = M = 3$) are paralleled. A four-layer AVR rectifier PCB is designed, along with a separate control daughterboard. The AVR rectifier PCB is shown with annotations in Figure \ref{fig:power_board}, and the control board PCB is shown with annotations in Figure \ref{fig:control_board}. Critical components and their specifications are listed in Table \ref{tab:components}. 
-
-The DC-DC converters are implemented as four-switch non-inverting buck-boost converters, with each switch implemented as two SiC MOSFETs in parallel. Careful attention was paid to the layout of these parallel SiC devices, to ensure reliable, noise-free, and synchronized switching.
+The proposed topology and controller are realized on a prototype 6.78 MHz, 12-kW AVR-equipped scalable capacitive WPT system. To achieve this power level, three 4-kW-rated full-bridge inverters and three half-bridge rectifiers in each AVR branch ($N = M = 3$) are paralleled. A four-layer AVR rectifier PCB is designed, along with a separate two-layer control daughterboard. The AVR rectifier PCB is shown with annotations in Figure \ref{fig:power_board}, and the control board PCB is shown with annotations in Figure \ref{fig:control_board}. Critical components and their specifications are listed in Table \ref{tab:components}. 
 
 \begin{table}[h!]
 \centering
@@ -262,7 +251,17 @@ The DC-DC converters are implemented as four-switch non-inverting buck-boost con
 \label{tab:components}
 \end{table}
 
+The DC-DC converters are implemented as four-switch non-inverting buck-boost converters, with each switch implemented as two SiC MOSFETs in parallel. Careful attention was paid to the layout of these parallel SiC devices, to ensure reliable, noise-free, and synchronized switching.
+
 Figure \ref{fig:setup} shows the hardware prototype and experimental setup with annotations labeling important components. The system has been tested up to a power level of 2 kW, and $V_{in} = V_{out} = 150$ V. Annotated waveforms for this scenario are shown in Figure \ref{fig:waveforms}. All three inverter switch nodes achieve soft-switching. Since the system is not misaligned here, the AVR branch currents are almost identical, which is the expected result. 
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.7\linewidth]{figures/setup_annotate_eps.eps}
+\caption{Hardware setup annotated.}
+\label{fig:setup}	
+\vspace{-0.5cm}
+\end{figure*}
 
 \begin{table}[!h]
 \centering
@@ -281,7 +280,7 @@ Figure \ref{fig:setup} shows the hardware prototype and experimental setup with 
 \label{tab:parameters}
 \end{table}
 
-The matching network values are presented in Table \ref{tab:parameters}. Note that the inductive reactance $+jX$ is not realized by adding an explicit inductor; rather, it is instead realized by adding a relatively large capacitor in series with the leakage inductance of the transformers. The hardware and experimental validation of the proposed topology are the third significant contribution of this paper.
+The co-designed matching network values and AVR rectifier differential reactance $X$, as well as other critical system parameters, are presented in Table \ref{tab:parameters}. Note that the inductive reactance $+jX$ is not realized by adding an explicit inductor; rather, it is instead realized by adding a relatively large capacitor in series with the leakage inductance of the transformers. The hardware and experimental validation of the proposed topology are the third significant contribution of this paper.
 
 \section{Conclusion and Future Work}
 \label{sec:conclusion}
@@ -291,67 +290,32 @@ The matching network values are presented in Table \ref{tab:parameters}. Note th
 \includegraphics[width=\linewidth]{figures/power_board_annotate_eps.eps}
 \caption{Annotated power board PCB.}
 \label{fig:power_board}
+\vspace{-0.3cm}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{figures/control_board_annotate_jpg_eps.eps}
+\includegraphics[width=\linewidth]{figures/control_board_annotate_eps.eps}
 \caption{Annotated control board PCB.}
 \label{fig:control_board}	
+\vspace{-0.5cm}
 \end{figure}
 
-\begin{figure}[!b]
+\begin{figure*}[!h]
 \centering
 \includegraphics[width=\linewidth]{figures/waveforms_annotate_eps.eps}
 \caption{Annotated system waveforms at 2 kW output power, nominal misalignment condition.}
-\label{fig:waveforms}	
-\end{figure}
+\label{fig:waveforms}
+\vspace{-0.7cm}	
+\end{figure*}
 
-This paper presents a novel architecture for scalable dynamic capacitive WPT systems. A state-space model is developed and a full state feedback controller is designed for the proposed topology. The operation of the system is validated in simulation. Finally, a 6.78-MHz, 12-kW AVR-equipped scalable capacitive WPT system with three 4-kW-rated full bridge inverters and three half-bridge rectifiers in each AVR branch is built. Its operation is then validated on this hardware. The next goal will be to show the system operating with fully dynamic closed-loop control at kilowatt-scale, and to validate the proposed topology on hardware up to 12 kW.
-
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{figures/appendix_a_diagram_eps.eps}
-\caption{Schematic illustrating $z_s$ equivalent circuit.}
-\vspace{-0.5cm}
-\label{fig:zsec_diagram}
-\end{figure}
+This paper presents a novel architecture for scalable dynamic capacitive WPT systems. A state-space model is developed and a full state feedback controller is designed for the proposed topology, which is then validated in simulation. Finally, a 6.78-MHz, 12-kW AVR-equipped scalable capacitive WPT system with three 4-kW-rated full bridge inverters and three half-bridge rectifiers in each AVR branch is built. Its operation is then validated on this hardware. The next goal will be to show the system operating with fully dynamic closed-loop control at kilowatt-scale, and to validate the proposed topology on hardware up to 12 kW.
 
 \appendices
 \section{}
-\label{app:zsec_proof}
-
-This appendix derives the expression for the impedance seen by the coupling capacitances, which is the same as the input impedance of the AVR rectifier transformerd through the secondary side of the matching network. Consider Figure \ref{fig:zsec_diagram} where the AVR rectifier input impedance is given by Eqn. \ref{eqn:zin}. Then:
-
-\begin{equation}
-\label{eqn:z_s_1}
-z_s = \frac{1}{j\omega_sC_{sec}} || (j\omega_sL_{sec} + r_r + jx_r)
-\end{equation}
-
-Expanding, this becomes:
-
-\begin{equation}
-\label{eqn:z_s_2}
-z_s = \frac{r_r + j(\omega_sL_{sec} + x_r)}{1-\omega_s^2C_{sec}L_{sec}-\omega_sC_{sec}x_r + j\omega_sC_{sec}r_r}
-\end{equation}
-
-Separating this expression into real and imaginary parts, then simplifying, gives $z_s$ in the form $z_s = \operatorname{Re}(z_s) + j\cdot\operatorname{Im}(z_s) = r_s + jx_s$, where:
-
-\begin{equation}
-\label{eqn:z_s_3}
-\begin{split}
-r_s &= \frac{r_r}
-			{(1-\omega_s^2C_{sec}L_{sec} - \omega_sC_{sec}x_r)^2 + (\omega_sC_{sec}r_r)^2} \\
-x_s &=\frac{(\omega_sL_{sec} + x_r)(1-\omega_s^2C_{sec}L_{sec}-\omega_sC_{sec}x_r)-r_r^2\omega_sC_{sec}}{(1-\omega_s^2C_{sec}L_{sec} - \omega_sC_{sec}x_r)^2 + (\omega_sC_{sec}r_r)^2}
-\end{split}
-\end{equation}
-
-This is the same as Eqn. \ref{eqn:zsec}.
-
-\section{}
 \label{app:partials}
 
-This appendix derives the partial derivatives of $p_{out}$ and $r_s$ with respect to the elements of the state vector $\vec{x} = \begin{bmatrix} v_1 & v_2 & v_{out} & i_{L1} & i_{L2} \end{bmatrix}^T$. $p_{out}$ is the output power, and $r_s$ is the real part of the impedance presented by the secondary-side matching network to the coupling capacitance. 
+This appendix derives the partial derivatives of $p_{out}$ and $r_s$ with respect to the elements of the state vector $\vec{x} = \begin{bmatrix} v_1 & v_2 & v_{out} & i_{L1} & i_{L2} \end{bmatrix}^T$. $p_{out}$ is the output power, and $r_s$ is the real part of the impedance presented by the secondary-side matching network. 
 
 The partial derivatives of $p_{out}$ are straightforward; take them directly from Eqn. \ref{eqn:pout} to obtain: 
 
@@ -404,7 +368,7 @@ Recall that the state vector $\vec{x}$ contains the voltages and currents $v_1, 
 \end{split}
 \end{equation}
 
-Using these quantities, the expression for $r_s$ can be written as:
+Using these quantities, $r_s$ can be written as:
 
 \begin{subequations}
 \vspace{-0.2cm}

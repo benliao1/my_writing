@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.11)  14 FEB 2026 00:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.11)  18 FEB 2026 21:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -892,8 +892,8 @@ s>
 (epstopdf)                    size: 169355 bytes
 (epstopdf)             Output file: <figures/wpt_with_avr_full_schematic_eps-ep
 s-converted-to.pdf>
-(epstopdf)                    date: 2026-02-14 00:55:47
-(epstopdf)                    size: 48679 bytes
+(epstopdf)                    date: 2026-02-16 10:00:51
+(epstopdf)                    size: 48677 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/wpt_with_avr
 _full_schematic_eps-eps-converted-to.pdf figures/wpt_with_avr_full_schematic_ep
 s.eps>
@@ -927,7 +927,7 @@ ic_eps.eps>
 (epstopdf)                    size: 220022 bytes
 (epstopdf)             Output file: <figures/scalable_wpt_with_avr_full_schemat
 ic_eps-eps-converted-to.pdf>
-(epstopdf)                    date: 2026-02-14 00:55:47
+(epstopdf)                    date: 2026-02-16 10:00:52
 (epstopdf)                    size: 62324 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/scalable_wpt
 _with_avr_full_schematic_eps-eps-converted-to.pdf figures/scalable_wpt_with_avr
@@ -951,7 +951,7 @@ Package epstopdf Info: Source file: <figures/avr_ss_model_schematic_eps.eps>
 (epstopdf)                    size: 114493 bytes
 (epstopdf)             Output file: <figures/avr_ss_model_schematic_eps-eps-con
 verted-to.pdf>
-(epstopdf)                    date: 2026-02-14 00:55:48
+(epstopdf)                    date: 2026-02-16 10:00:52
 (epstopdf)                    size: 36059 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/avr_ss_model
 _schematic_eps-eps-converted-to.pdf figures/avr_ss_model_schematic_eps.eps>
@@ -965,175 +965,151 @@ e pdf)
 Package pdftex.def Info: figures/avr_ss_model_schematic_eps-eps-converted-to.pd
 f  used on input line 145.
 (pdftex.def)             Requested size: 245.19635pt x 98.86052pt.
-[2 <./figures/wpt_with_avr_full_schematic_eps-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/sim_results_eps.eps>
 (epstopdf)                    date: 2026-02-10 21:45:28
 (epstopdf)                    size: 675518 bytes
 (epstopdf)             Output file: <figures/sim_results_eps-eps-converted-to.p
 df>
-(epstopdf)                    date: 2026-02-14 00:55:49
+(epstopdf)                    date: 2026-02-16 10:00:53
 (epstopdf)                    size: 681038 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/sim_results_
 eps-eps-converted-to.pdf figures/sim_results_eps.eps>
-(epstopdf)             \includegraphics on input line 157.
+(epstopdf)             \includegraphics on input line 155.
 Package epstopdf Info: Output file is already uptodate.
-<figures/sim_results_eps-eps-converted-to.pdf, id=36, 1494.58376pt x 316.18124p
+<figures/sim_results_eps-eps-converted-to.pdf, id=18, 1494.58376pt x 316.18124p
 t>
 File: figures/sim_results_eps-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/sim_results_eps-eps-converted-to.pdf>
 Package pdftex.def Info: figures/sim_results_eps-eps-converted-to.pdf  used on 
-input line 157.
+input line 155.
 (pdftex.def)             Requested size: 516.0pt x 109.15984pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 164--214
+Overfull \hbox (12.0pt too wide) in paragraph at lines 162--212
  [][] 
  []
 
+[2 <./figures/wpt_with_avr_full_schematic_eps-eps-converted-to.pdf>]
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
-23.
+21.
+
 (C:\Users\ben\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-[3 <./figures/scalable_wpt_with_avr_full_schematic_eps-eps-converted-to.pdf> <.
-/figures/avr_ss_model_schematic_eps-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/block_diagram_eps.eps>
 (epstopdf)                    date: 2026-02-10 21:45:28
 (epstopdf)                    size: 126712 bytes
 (epstopdf)             Output file: <figures/block_diagram_eps-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2026-02-14 00:55:49
+(epstopdf)                    date: 2026-02-16 10:00:54
 (epstopdf)                    size: 47605 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/block_diagra
 m_eps-eps-converted-to.pdf figures/block_diagram_eps.eps>
-(epstopdf)             \includegraphics on input line 229.
+(epstopdf)             \includegraphics on input line 225.
 Package epstopdf Info: Output file is already uptodate.
-<figures/block_diagram_eps-eps-converted-to.pdf, id=74, 632.3625pt x 353.32pt>
+<figures/block_diagram_eps-eps-converted-to.pdf, id=37, 632.3625pt x 353.32pt>
 File: figures/block_diagram_eps-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/block_diagram_eps-eps-converted-to.pdf>
 Package pdftex.def Info: figures/block_diagram_eps-eps-converted-to.pdf  used o
-n input line 229.
+n input line 225.
 (pdftex.def)             Requested size: 245.19635pt x 136.99634pt.
-Package epstopdf Info: Source file: <figures/setup_annotate_eps.eps>
-(epstopdf)                    date: 2026-02-13 22:31:16
-(epstopdf)                    size: 5141682 bytes
-(epstopdf)             Output file: <figures/setup_annotate_eps-eps-converted-t
-o.pdf>
-(epstopdf)                    date: 2026-02-14 00:55:51
-(epstopdf)                    size: 3560865 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=figures/setup_annota
-te_eps-eps-converted-to.pdf figures/setup_annotate_eps.eps>
-(epstopdf)             \includegraphics on input line 236.
-Package epstopdf Info: Output file is already uptodate.
-<figures/setup_annotate_eps-eps-converted-to.pdf, id=75, 2181.14874pt x 836.123
-75pt>
-File: figures/setup_annotate_eps-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/setup_annotate_eps-eps-converted-to.pdf>
-Package pdftex.def Info: figures/setup_annotate_eps-eps-converted-to.pdf  used 
-on input line 236.
-(pdftex.def)             Requested size: 516.0pt x 197.80319pt.
 
-Overfull \hbox (0.51697pt too wide) in paragraph at lines 250--261
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3 <./figures/scalable_wpt_with_avr_full_schematic_eps-eps-converted-to.pdf> <.
+/figures/avr_ss_model_schematic_eps-eps-converted-to.pdf>]
+Overfull \hbox (0.51697pt too wide) in paragraph at lines 239--250
  [][] 
  []
 
-[4 <./figures/sim_results_eps-eps-converted-to.pdf> <./figures/block_diagram_ep
-s-eps-converted-to.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Package epstopdf Info: Source file: <figures/setup_annotate_eps.eps>
+(epstopdf)                    date: 2026-02-16 10:05:07
+(epstopdf)                    size: 1819472 bytes
+(epstopdf)             Output file: <figures/setup_annotate_eps-eps-converted-t
+o.pdf>
+(epstopdf)                    date: 2026-02-16 10:05:12
+(epstopdf)                    size: 1383061 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=figures/setup_annota
+te_eps-eps-converted-to.pdf figures/setup_annotate_eps.eps>
+(epstopdf)             \includegraphics on input line 260.
+Package epstopdf Info: Output file is already uptodate.
+<figures/setup_annotate_eps-eps-converted-to.pdf, id=78, 1668.2325pt x 640.3925
+pt>
+File: figures/setup_annotate_eps-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/setup_annotate_eps-eps-converted-to.pdf>
+Package pdftex.def Info: figures/setup_annotate_eps-eps-converted-to.pdf  used 
+on input line 260.
+(pdftex.def)             Requested size: 361.19843pt x 138.64908pt.
 Package epstopdf Info: Source file: <figures/power_board_annotate_eps.eps>
-(epstopdf)                    date: 2026-02-13 20:10:34
-(epstopdf)                    size: 9102537 bytes
+(epstopdf)                    date: 2026-02-18 21:51:58
+(epstopdf)                    size: 1477785 bytes
 (epstopdf)             Output file: <figures/power_board_annotate_eps-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2026-02-14 00:55:54
-(epstopdf)                    size: 1270840 bytes
+(epstopdf)                    date: 2026-02-18 21:52:01
+(epstopdf)                    size: 569542 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/power_board_
 annotate_eps-eps-converted-to.pdf figures/power_board_annotate_eps.eps>
-(epstopdf)             \includegraphics on input line 291.
+(epstopdf)             \includegraphics on input line 290.
 Package epstopdf Info: Output file is already uptodate.
-<figures/power_board_annotate_eps-eps-converted-to.pdf, id=104, 714.67pt x 505.
-89pt>
+<figures/power_board_annotate_eps-eps-converted-to.pdf, id=79, 715.67375pt x 50
+6.89375pt>
 File: figures/power_board_annotate_eps-eps-converted-to.pdf Graphic file (type 
 pdf)
 <use figures/power_board_annotate_eps-eps-converted-to.pdf>
 Package pdftex.def Info: figures/power_board_annotate_eps-eps-converted-to.pdf 
- used on input line 291.
-(pdftex.def)             Requested size: 245.19635pt x 173.56732pt.
-Package epstopdf Info: Source file: <figures/control_board_annotate_jpg_eps.eps
->
-(epstopdf)                    date: 2026-02-14 00:59:02
-(epstopdf)                    size: 1458231 bytes
-(epstopdf)             Output file: <figures/control_board_annotate_jpg_eps-eps
--converted-to.pdf>
+ used on input line 290.
+(pdftex.def)             Requested size: 245.19635pt x 173.6642pt.
+Package epstopdf Info: Source file: <figures/control_board_annotate_eps.eps>
+(epstopdf)                    date: 2026-02-16 10:00:47
+(epstopdf)                    size: 1384887 bytes
+(epstopdf)             Output file: <figures/control_board_annotate_eps-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2026-02-16 10:00:59
+(epstopdf)                    size: 167673 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/control_boar
-d_annotate_jpg_eps-eps-converted-to.pdf figures/control_board_annotate_jpg_eps.
-eps>
+d_annotate_eps-eps-converted-to.pdf figures/control_board_annotate_eps.eps>
 (epstopdf)             \includegraphics on input line 298.
-runsystem(miktex-epstopdf --outfile=figures/control_board_annotate_jpg_eps-eps-
-converted-to.pdf figures/control_board_annotate_jpg_eps.eps)...executed safely 
-(allowed).
-
-Package epstopdf Info: Result file: <figures/control_board_annotate_jpg_eps-eps
--converted-to.pdf>
-(epstopdf)                    date: 2026-02-14 00:59:18
-(epstopdf)                    size: 83815 bytes.
-<figures/control_board_annotate_jpg_eps-eps-converted-to.pdf, id=105, 528.97626
-pt x 255.95625pt>
-File: figures/control_board_annotate_jpg_eps-eps-converted-to.pdf Graphic file 
-(type pdf)
-<use figures/control_board_annotate_jpg_eps-eps-converted-to.pdf>
-Package pdftex.def Info: figures/control_board_annotate_jpg_eps-eps-converted-t
-o.pdf  used on input line 298.
-(pdftex.def)             Requested size: 245.19635pt x 118.64348pt.
+Package epstopdf Info: Output file is already uptodate.
+<figures/control_board_annotate_eps-eps-converted-to.pdf, id=80, 338.26375pt x 
+162.6075pt>
+File: figures/control_board_annotate_eps-eps-converted-to.pdf Graphic file (typ
+e pdf)
+<use figures/control_board_annotate_eps-eps-converted-to.pdf>
+Package pdftex.def Info: figures/control_board_annotate_eps-eps-converted-to.pd
+f  used on input line 298.
+(pdftex.def)             Requested size: 245.19635pt x 117.87128pt.
 Package epstopdf Info: Source file: <figures/waveforms_annotate_eps.eps>
-(epstopdf)                    date: 2026-02-13 23:17:07
-(epstopdf)                    size: 276643 bytes
+(epstopdf)                    date: 2026-02-18 20:05:59
+(epstopdf)                    size: 276659 bytes
 (epstopdf)             Output file: <figures/waveforms_annotate_eps-eps-convert
 ed-to.pdf>
-(epstopdf)                    date: 2026-02-14 00:55:55
-(epstopdf)                    size: 417520 bytes
+(epstopdf)                    date: 2026-02-18 20:06:10
+(epstopdf)                    size: 417543 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/waveforms_an
 notate_eps-eps-converted-to.pdf figures/waveforms_annotate_eps.eps>
-(epstopdf)             \includegraphics on input line 305.
+(epstopdf)             \includegraphics on input line 306.
 Package epstopdf Info: Output file is already uptodate.
-<figures/waveforms_annotate_eps-eps-converted-to.pdf, id=106, 450.68375pt x 775
-.89874pt>
+<figures/waveforms_annotate_eps-eps-converted-to.pdf, id=81, 1314.9125pt x 262.
+9825pt>
 File: figures/waveforms_annotate_eps-eps-converted-to.pdf Graphic file (type pd
 f)
 <use figures/waveforms_annotate_eps-eps-converted-to.pdf>
 Package pdftex.def Info: figures/waveforms_annotate_eps-eps-converted-to.pdf  u
-sed on input line 305.
-(pdftex.def)             Requested size: 245.19635pt x 422.14017pt.
-Package epstopdf Info: Source file: <figures/appendix_a_diagram_eps.eps>
-(epstopdf)                    date: 2026-02-12 17:25:17
-(epstopdf)                    size: 46143 bytes
-(epstopdf)             Output file: <figures/appendix_a_diagram_eps-eps-convert
-ed-to.pdf>
-(epstopdf)                    date: 2026-02-14 00:55:56
-(epstopdf)                    size: 19765 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=figures/appendix_a_d
-iagram_eps-eps-converted-to.pdf figures/appendix_a_diagram_eps.eps>
-(epstopdf)             \includegraphics on input line 314.
-Package epstopdf Info: Output file is already uptodate.
-<figures/appendix_a_diagram_eps-eps-converted-to.pdf, id=107, 509.905pt x 234.8
-775pt>
-File: figures/appendix_a_diagram_eps-eps-converted-to.pdf Graphic file (type pd
-f)
-<use figures/appendix_a_diagram_eps-eps-converted-to.pdf>
-Package pdftex.def Info: figures/appendix_a_diagram_eps-eps-converted-to.pdf  u
-sed on input line 314.
-(pdftex.def)             Requested size: 245.19635pt x 112.9442pt.
+sed on input line 306.
+(pdftex.def)             Requested size: 516.0pt x 103.20079pt.
 
-Overfull \hbox (15.36288pt too wide) detected at line 347
-[]
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5 <./figures/setup_annotate_eps-eps-converted-to.pdf> <./figures/power_board_a
-nnotate_eps-eps-converted-to.pdf> <./figures/control_board_annotate_jpg_eps-eps
--converted-to.pdf>] [6 <./figures/waveforms_annotate_eps-eps-converted-to.pdf> 
-<./figures/appendix_a_diagram_eps-eps-converted-to.pdf>] (main.bbl
+[4 <./figures/sim_results_eps-eps-converted-to.pdf> <./figures/block_diagram_ep
+s-eps-converted-to.pdf>] [5 <./figures/setup_annotate_eps-eps-converted-to.pdf>
+ <./figures/power_board_annotate_eps-eps-converted-to.pdf> <./figures/control_b
+oard_annotate_eps-eps-converted-to.pdf>] (main.bbl
 Underfull \hbox (badness 1616) in paragraph at lines 9--13
 []\OT1/ptm/m/n/8 B. Re-gens-burger, A. Ku-mar, S. Sinha, and K. Afridi, ``High-
 
@@ -1156,17 +1132,21 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7] (main.aux)
+[6 <./figures/waveforms_annotate_eps-eps-converted-to.pdf>] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 19317 strings out of 467866
- 395535 string characters out of 5419293
- 823217 words of memory out of 5000000
- 47855 multiletter control sequences out of 15000+600000
+ 19305 strings out of 467866
+ 395062 string characters out of 5419293
+ 827025 words of memory out of 5000000
+ 47843 multiletter control sequences out of 15000+600000
  658710 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,33n,94p,1416b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1186,9 +1166,9 @@ pData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/ben/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/ben/AppDa
 ta/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/ben/AppData
 /Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (7 pages, 6447194 bytes).
+Output written on main.pdf (6 pages, 3630274 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
+ 210 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
